@@ -1,11 +1,12 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, Text, TextInput, View } from "react-native";
+import { SafeAreaView, StyleSheet, View } from "react-native";
 
 import Card from "../components/Card";
 import Header from "../components/Header";
 import AppText from "../components/AppText";
 import AppTextInput from "../components/AppTextInput";
+import APPCheckBox from "../components/APPCheckBox";
 
 function StartingScreen(props) {
   return (
@@ -23,6 +24,7 @@ function StartingScreen(props) {
           <AppText>Phone number</AppText>
           <AppTextInput></AppTextInput>
         </Card>
+        <APPCheckBox label="I am not a robot"></APPCheckBox>
       </View>
     </SafeAreaView>
   );
@@ -43,6 +45,10 @@ const styles = StyleSheet.create({
   bottomContainer: {
     flex: 9,
     justifyContent: "flext-start",
+  },
+  checkbox: {
+    flexDirection: "row",
+    alignItems: "center",
   },
 });
 

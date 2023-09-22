@@ -7,9 +7,12 @@ function APPCheckBox({ label }) {
 
   return (
     <View style={styles.container}>
-      <Checkbox value={isChecked} onValueChange={setChecked}>
-        {label && <Text>{label}</Text>}
-      </Checkbox>
+      <Checkbox
+        value={isChecked}
+        onValueChange={setChecked}
+        style={styles.checkbox}
+      />
+      <Text>{label}</Text>
     </View>
   );
 }
@@ -21,6 +24,9 @@ const styles = StyleSheet.create({
   },
   checkbox: {
     margin: 8,
+  },
+  text: {
+    fontFamily: 15,
   },
 });
 
