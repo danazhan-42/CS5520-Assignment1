@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import Card from "./components/Card";
 import Header from "./components/Header";
+import StartingScreen from "./screens/StartingScreen";
 
 export default function App() {
   return (
@@ -11,7 +12,7 @@ export default function App() {
         <StatusBar style="auto" />
       </View>
       <View style={styles.bottomContainer}>
-        <Card />
+        <Card></Card>
       </View>
     </SafeAreaView>
   );

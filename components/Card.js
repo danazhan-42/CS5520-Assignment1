@@ -1,10 +1,13 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
+import AppText from "./AppText";
 
 const Card = () => {
   return (
     <View style={styles.card}>
-      <Text style={styles.text}>Name</Text>
+      <AppText>Name</AppText>
+      <AppText>Email address</AppText>
+      <AppText>Phone number</AppText>
     </View>
   );
 };
@@ -26,12 +29,6 @@ const styles = StyleSheet.create({
     //Flexbox
     justifyContent: "flex-start",
     alignItems: "flex-start",
-  },
-  text: {
-    fontSize: 20,
-    color: "darkslateblue",
-    fontWeight: "bold",
-    padding: 10,
   },
 });
 
