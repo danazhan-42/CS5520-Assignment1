@@ -23,8 +23,8 @@ function StartingScreen(props) {
           <AppTextInput></AppTextInput>
           <AppText>Phone number</AppText>
           <AppTextInput></AppTextInput>
+          <APPCheckBox label="I am not a robot"></APPCheckBox>
         </Card>
-        <APPCheckBox label="I am not a robot"></APPCheckBox>
       </View>
     </SafeAreaView>
   );

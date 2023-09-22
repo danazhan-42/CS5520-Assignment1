@@ -21,6 +21,8 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
   },
   checkbox: {
     margin: 8,
