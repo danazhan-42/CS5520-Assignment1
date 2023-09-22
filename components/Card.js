@@ -11,8 +11,8 @@ const Card = () => {
 
 const styles = StyleSheet.create({
   card: {
-    width: "80%",
-    minHeight: 450,
+    width: 300,
+    minHeight: 500,
     // Rounded corners
     borderRadius: 10,
     backgroundColor: "gainsboro",
@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
-    color: "blue",
+    color: "darkslateblue",
+    fontWeight: "bold",
     padding: 10,
   },
 });
