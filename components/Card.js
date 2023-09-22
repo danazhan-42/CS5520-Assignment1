@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import React from "react";
 
 const Card = ({ children }) => {
@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
 
     //Flexbox
-    justifyContent: "flex-start",
-    alignItems: "center",
+    justifyContent: "space-evenly",
+    alignItems: "flex-start",
   },
 });
 
