@@ -1,14 +1,15 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Dimensions } from "react-native";
 import React from "react";
 
 const Card = ({ children }) => {
   return <View style={styles.card}>{children}</View>;
 };
 
+const screenWidth = Dimensions.get("window").width;
+
 const styles = StyleSheet.create({
   card: {
-    width: 300,
-    minHeight: 500,
+    width: screenWidth * 0.8,
     // Rounded corners
     borderRadius: 10,
     backgroundColor: "gainsboro",

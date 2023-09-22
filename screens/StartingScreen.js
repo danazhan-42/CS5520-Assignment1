@@ -1,6 +1,6 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, TextInput, View } from "react-native";
 
 import Card from "../components/Card";
 import Header from "../components/Header";
@@ -11,19 +11,17 @@ function StartingScreen(props) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.topContainer}>
-        <Header />
+        <Header></Header>
         <StatusBar style="auto" />
       </View>
       <View style={styles.bottomContainer}>
         <Card>
-          <View style={styles.card}>
-            <AppText>Name</AppText>
-            <AppTextInput></AppTextInput>
-            <AppText>Email address</AppText>
-            <AppTextInput></AppTextInput>
-            <AppText>Phone number</AppText>
-            <AppTextInput></AppTextInput>
-          </View>
+          <AppText>Name</AppText>
+          <AppTextInput></AppTextInput>
+          <AppText>Email address</AppText>
+          <AppTextInput></AppTextInput>
+          <AppText>Phone number</AppText>
+          <AppTextInput></AppTextInput>
         </Card>
       </View>
     </SafeAreaView>
@@ -43,8 +41,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
   },
   bottomContainer: {
-    flex: 8,
-    alignItems: "stretch",
+    flex: 9,
+    justifyContent: "flext-start",
   },
 });
 
