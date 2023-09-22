@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
   container: {
     width: "90%",
     padding: 10,
-    alignItems: "center",
   },
   input: {
     fontSize: 15,

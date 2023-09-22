@@ -7,6 +7,7 @@ import Header from "../components/Header";
 import AppText from "../components/AppText";
 import AppTextInput from "../components/AppTextInput";
 import APPCheckBox from "../components/APPCheckBox";
+import AppBotton from "../components/AppBotton";
 
 function StartingScreen(props) {
   return (
@@ -24,6 +25,10 @@ function StartingScreen(props) {
           <AppText>Phone number</AppText>
           <AppTextInput></AppTextInput>
           <APPCheckBox label="I am not a robot"></APPCheckBox>
+          <AppBotton
+            title="reset"
+            onPress={() => console.log("Tapped")}
+          ></AppBotton>
         </Card>
       </View>
     </SafeAreaView>
