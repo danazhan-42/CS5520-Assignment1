@@ -9,7 +9,9 @@ const Card = () => {
       <AppText>Name</AppText>
       <AppTextInput></AppTextInput>
       <AppText>Email address</AppText>
+      <AppTextInput></AppTextInput>
       <AppText>Phone number</AppText>
+      <AppTextInput></AppTextInput>
     </View>
   );
 };

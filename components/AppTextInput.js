@@ -13,7 +13,7 @@ function AppTextInput(props) {
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
+    width: "90%",
     padding: 10,
     alignItems: "center",
   },
