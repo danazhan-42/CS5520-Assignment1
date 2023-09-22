@@ -1,19 +1,8 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
-import AppText from "./AppText";
-import AppTextInput from "./AppTextInput";
 
-const Card = () => {
-  return (
-    <View style={styles.card}>
-      <AppText>Name</AppText>
-      <AppTextInput></AppTextInput>
-      <AppText>Email address</AppText>
-      <AppTextInput></AppTextInput>
-      <AppText>Phone number</AppText>
-      <AppTextInput></AppTextInput>
-    </View>
-  );
+const Card = ({ children }) => {
+  return <View style={styles.card}>{children}</View>;
 };
 
 const styles = StyleSheet.create({
