@@ -32,8 +32,8 @@ function StartingScreen(props) {
           />
           <AppText>Phone number</AppText>
           <ValidationTextInput
-            regex={/^\d{3}-\d{3}-\d{4}$/}
-            validationMessage="Please enter a valid phone number of the form xxx-xxx-xxxx"
+            regex={/^\d{3}\d{3}\d{4}$/}
+            validationMessage="Please enter a valid phone number of the form xxxxxxxxxx"
           />
           <APPCheckBox
             label="I am not a robot"

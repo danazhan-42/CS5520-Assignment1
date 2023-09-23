@@ -1,13 +1,37 @@
 import React, { useState } from "react";
-import { TextInput, View, StyleSheet } from "react-native";
+import { TextInput, View, StyleSheet, Text } from "react-native";
 import { colors } from "../.expo/colors";
 
 function ValidationTextInput(props) {
-  const [text, setText] = useState("");
+  const [text, setText] = useState();
+  const [validationMessage, setValidationMessage] = useState();
+
+  const handleTextChange = (input) => {
+    setText(input);
+    if (validationMessage) {
+      validate(input);
+    }
+  };
+
+  const validate = (input) => {
+    const isValid = props.regex.test(input);
+    if (!isValid) {
+      setValidationMessage(props.validationMessage);
+    } else {
+      setValidationMessage();
+    }
+  };
 
   return (
     <View style={styles.container}>
-      <TextInput onChangeText={setText} style={styles.input}></TextInput>
+      <TextInput
+        style={styles.input}
+        onChangeText={handleTextChange}
+        onEndEditing={() => validate(text)}
+        value={text}
+        {...props}
+      ></TextInput>
+      <Text style={styles.msg}>{validationMessage}</Text>
     </View>
   );
 }
@@ -25,6 +49,11 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     textAlign: "center",
   },
+  msg: {
+    fontSize: 15,
+    color: "black",
+    marginBottom: 10,
+  },
 });
 
-export default AppTextInput;
+export default ValidationTextInput;
