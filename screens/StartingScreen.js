@@ -25,10 +25,18 @@ function StartingScreen(props) {
           <AppText>Phone number</AppText>
           <AppTextInput></AppTextInput>
           <APPCheckBox label="I am not a robot"></APPCheckBox>
-          <AppBotton
-            title="reset"
-            onPress={() => console.log("Tapped")}
-          ></AppBotton>
+          <View>
+            <AppBotton
+              title="reset"
+              color="red"
+              onPress={() => console.log("Tapped")}
+            ></AppBotton>
+            <AppBotton
+              title="Start"
+              color="blue"
+              onPress={() => console.log("Tapped")}
+            ></AppBotton>
+          </View>
         </Card>
       </View>
     </SafeAreaView>
