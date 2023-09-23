@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 
@@ -10,6 +10,16 @@ import APPCheckBox from "../components/APPCheckBox";
 import AppBotton from "../components/AppBotton";
 
 function StartingScreen(props) {
+  const [isEnabled, setEnabled] = useState(false);
+
+  function enableStartButton() {
+    setEnabled(true);
+  }
+
+  function disableStartButton() {
+    setEnabled(false);
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.topContainer}>
@@ -24,7 +34,10 @@ function StartingScreen(props) {
           <AppTextInput></AppTextInput>
           <AppText>Phone number</AppText>
           <AppTextInput></AppTextInput>
-          <APPCheckBox label="I am not a robot"></APPCheckBox>
+          <APPCheckBox
+            label="I am not a robot"
+            onClick={enableStartButton}
+          ></APPCheckBox>
           <View style={styles.bottonContainer}>
             <AppBotton
               title="reset"
@@ -34,6 +47,7 @@ function StartingScreen(props) {
             <AppBotton
               title="Start"
               color="blue"
+              disabled={!isEnabled}
               onPress={() => console.log("Tapped")}
             ></AppBotton>
           </View>
