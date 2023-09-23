@@ -11,7 +11,12 @@ import AppBotton from "../components/AppBotton";
 
 function StartingScreen(props) {
   const [isCheckboxSelected, setIsCheckboxSelected] = useState(false);
-  const [isReset, setReset] = useState(false);
+  const [resetFlag, setResetFlag] = useState(false);
+
+  const handleReset = () => {
+    setResetFlag(!resetFlag);
+    setIsCheckboxSelected(false);
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -25,16 +30,19 @@ function StartingScreen(props) {
           <ValidationTextInput
             regex={/^[a-zA-Z ]{2,30}$/}
             validationMessage="Please enter a valid name"
+            reset={isReset}
           />
           <AppText>Email address</AppText>
           <ValidationTextInput
             regex={/^[^\s@]+@[^\s@]+\.[^\s@]+$/}
             validationMessage="Please enter a valid email"
+            reset={isReset}
           />
           <AppText>Phone number</AppText>
           <ValidationTextInput
             regex={/^\d{3}\d{3}\d{4}$/}
             validationMessage="Please enter a valid phone number of the form xxxxxxxxxx"
+            reset={isReset}
           />
           <APPCheckBox
             label="I am not a robot"
@@ -44,7 +52,7 @@ function StartingScreen(props) {
             <AppBotton
               title="reset"
               color="red"
-              onPress={setReset(ture)}
+              onPress={handleReset}
             ></AppBotton>
             <AppBotton
               title="Start"
