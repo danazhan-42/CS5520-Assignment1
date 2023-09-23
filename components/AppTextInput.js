@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { TextInput, View, StyleSheet } from "react-native";
 import { colors } from "../.expo/colors";
 
 function AppTextInput(props) {
+  const [text, setText] = useState("");
+
   return (
     <View style={styles.container}>
-      <TextInput style={styles.input}></TextInput>
-      <View style={styles.underline} />
+      <TextInput onChangeText={setText} style={styles.input}></TextInput>
     </View>
   );
 }
@@ -20,12 +21,9 @@ const styles = StyleSheet.create({
   input: {
     fontSize: 15,
     fontWeight: "bold",
-  },
-  underline: {
-    width: "100%",
-    borderBottomWidth: 1,
     borderBottomColor: "darkslateblue",
-    paddingTop: 10,
+    borderBottomWidth: 1,
+    textAlign: "center",
   },
 });
 
