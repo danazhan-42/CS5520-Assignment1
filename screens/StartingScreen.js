@@ -11,6 +11,7 @@ import AppBotton from "../components/AppBotton";
 
 function StartingScreen(props) {
   const [isCheckboxSelected, setIsCheckboxSelected] = useState(false);
+  const [isReset, setReset] = useState(false);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -43,7 +44,7 @@ function StartingScreen(props) {
             <AppBotton
               title="reset"
               color="red"
-              onPress={() => console.log("Tapped")}
+              onPress={setReset(ture)}
             ></AppBotton>
             <AppBotton
               title="Start"
