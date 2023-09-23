@@ -14,6 +14,9 @@ function StartingScreen(props) {
   const [isCheckboxSelected, setIsCheckboxSelected] = useState(false);
   const [resetFlag, setResetFlag] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
 
   const handleReset = () => {
     setResetFlag(!resetFlag);
@@ -39,20 +42,23 @@ function StartingScreen(props) {
           <AppText>Name</AppText>
           <ValidationTextInput
             regex={/^[a-zA-Z ]{2,30}$/}
-            validationMessage="Please enter a valid name"
+            message="Please enter a valid name"
             reset={resetFlag}
+            onChangeText={setName}
           />
           <AppText>Email address</AppText>
           <ValidationTextInput
             regex={/^[^\s@]+@[^\s@]+\.[^\s@]+$/}
-            validationMessage="Please enter a valid email"
+            message="Please enter a valid email"
             reset={resetFlag}
+            onChangeText={setEmail}
           />
           <AppText>Phone number</AppText>
           <ValidationTextInput
             regex={/^\d{3}\d{3}\d{4}$/}
-            validationMessage="Please enter a valid phone number of the form xxxxxxxxxx"
+            message="Please enter a valid phone number of the form xxxxxxxxxx"
             reset={resetFlag}
+            onChangeText={setPhone}
           />
           <APPCheckBox
             label="I am not a robot"
@@ -75,6 +81,7 @@ function StartingScreen(props) {
         </Card>
       </View>
       <ConfirmScreen
+        userInfo={[name, email, phone]}
         modalVisibility={isModalVisible}
         hideModal={makeModalInvisible}
       ></ConfirmScreen>

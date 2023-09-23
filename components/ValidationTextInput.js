@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { TextInput, View, StyleSheet, Text } from "react-native";
 import { colors } from "../.expo/colors";
 
-function ValidationTextInput(props) {
+function ValidationTextInput({ regex, message, reset, onChangeText }) {
   const [text, setText] = useState();
   const [validationMessage, setValidationMessage] = useState();
 
   useEffect(() => {
     setText("");
-  }, [props.reset]);
+  }, [reset]);
 
   const handleTextChange = (input) => {
     setText(input);
@@ -16,12 +16,13 @@ function ValidationTextInput(props) {
     if (validationMessage) {
       validate(input);
     }
+    onChangeText(input);
   };
 
   const validate = (input) => {
-    const isValid = props.regex.test(input);
+    const isValid = regex.test(input);
     if (!isValid) {
-      setValidationMessage(props.validationMessage);
+      setValidationMessage(validationMessage);
     } else {
       setValidationMessage();
     }

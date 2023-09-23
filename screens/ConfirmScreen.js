@@ -2,13 +2,15 @@ import React from "react";
 import { Modal, Text, StyleSheet, SafeAreaView, View } from "react-native";
 import Card from "../components/Card";
 import AppButton from "../components/AppBotton";
+import AppText from "../components/AppText";
 
-function ConfirmScreen({ modalVisibility, hideModal }) {
+function ConfirmScreen({ userInfo, modalVisibility, hideModal }) {
   return (
     <Modal visible={modalVisibility}>
       <SafeAreaView style={styles.container}>
         <Card>
           <View style={styles.buttonContainer}>
+            <AppText>{userInfo}</AppText>
             <AppButton title="Go Back" color="red" />
             <AppButton title="Continue" color="blue" />
           </View>
