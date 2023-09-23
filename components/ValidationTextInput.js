@@ -8,6 +8,7 @@ function ValidationTextInput(props) {
 
   const handleTextChange = (input) => {
     setText(input);
+    // Give prompt feedback when user correct the input
     if (validationMessage) {
       validate(input);
     }
@@ -29,7 +30,6 @@ function ValidationTextInput(props) {
         onChangeText={handleTextChange}
         onEndEditing={() => validate(text)}
         value={text}
-        {...props}
       ></TextInput>
       <Text style={styles.msg}>{validationMessage}</Text>
     </View>
