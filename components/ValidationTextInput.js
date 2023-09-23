@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { TextInput, View, StyleSheet } from "react-native";
 import { colors } from "../.expo/colors";
 
-function AppTextInput(props) {
+function ValidationTextInput(props) {
   const [text, setText] = useState("");
 
   return (

@@ -21,11 +21,20 @@ function StartingScreen(props) {
       <View style={styles.bottomContainer}>
         <Card>
           <AppText>Name</AppText>
-          <ValidationTextInput></ValidationTextInput>
+          <ValidationTextInput
+            regex={/^[a-zA-Z ]{2,30}$/}
+            validationMessage="Please enter a valid name"
+          />
           <AppText>Email address</AppText>
-          <ValidationTextInput></ValidationTextInput>
+          <ValidationTextInput
+            regex={/^[^\s@]+@[^\s@]+\.[^\s@]+$/}
+            validationMessage="Please enter a valid email"
+          />
           <AppText>Phone number</AppText>
-          <ValidationTextInput></ValidationTextInput>
+          <ValidationTextInput
+            regex={/^\d{3}-\d{3}-\d{4}$/}
+            validationMessage="Please enter a valid phone number of the form xxx-xxx-xxxx"
+          />
           <APPCheckBox
             label="I am not a robot"
             onValueChange={(newValue) => setIsCheckboxSelected(newValue)}
