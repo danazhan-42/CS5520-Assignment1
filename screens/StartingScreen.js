@@ -37,7 +37,7 @@ function StartingScreen(props) {
           />
           <APPCheckBox
             label="I am not a robot"
-            onValueChange={(newValue) => setIsCheckboxSelected(newValue)}
+            onValueChange={setIsCheckboxSelected}
           ></APPCheckBox>
           <View style={styles.bottonContainer}>
             <AppBotton

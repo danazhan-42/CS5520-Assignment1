@@ -8,7 +8,7 @@ function ValidationTextInput(props) {
 
   const handleTextChange = (input) => {
     setText(input);
-    // Give prompt feedback when user correct the input
+    // Give prompt feedback when user corrects the inputgit
     if (validationMessage) {
       validate(input);
     }

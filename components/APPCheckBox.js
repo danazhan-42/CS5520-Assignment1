@@ -11,9 +11,7 @@ function APPCheckBox({ label, onValueChange }) {
         value={isChecked}
         onValueChange={(newValue) => {
           setChecked(newValue);
-          if (onValueChange) {
-            onValueChange(newValue);
-          }
+          onValueChange(newValue);
         }}
         style={styles.checkbox}
       />
