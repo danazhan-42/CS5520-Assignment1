@@ -10,15 +10,7 @@ import APPCheckBox from "../components/APPCheckBox";
 import AppBotton from "../components/AppBotton";
 
 function StartingScreen(props) {
-  const [isEnabled, setEnabled] = useState(false);
-
-  function enableStartButton() {
-    setEnabled(true);
-  }
-
-  function disableStartButton() {
-    setEnabled(false);
-  }
+  const [isCheckboxSelected, setIsCheckboxSelected] = useState(false);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -36,7 +28,7 @@ function StartingScreen(props) {
           <AppTextInput></AppTextInput>
           <APPCheckBox
             label="I am not a robot"
-            onClick={enableStartButton}
+            onValueChange={(newValue) => setIsCheckboxSelected(newValue)}
           ></APPCheckBox>
           <View style={styles.bottonContainer}>
             <AppBotton
@@ -47,8 +39,8 @@ function StartingScreen(props) {
             <AppBotton
               title="Start"
               color="blue"
-              disabled={!isEnabled}
-              onPress={() => console.log("Tapped")}
+              disabled={!isCheckboxSelected}
+              onPress={() => console.log("y")}
             ></AppBotton>
           </View>
         </Card>

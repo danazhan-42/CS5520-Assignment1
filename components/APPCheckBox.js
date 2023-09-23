@@ -2,14 +2,19 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Checkbox from "expo-checkbox";
 
-function APPCheckBox({ label }) {
+function APPCheckBox({ label, onValueChange }) {
   const [isChecked, setChecked] = useState(false);
 
   return (
     <View style={styles.container}>
       <Checkbox
         value={isChecked}
-        onValueChange={setChecked}
+        onValueChange={(newValue) => {
+          setChecked(newValue);
+          if (onValueChange) {
+            onValueChange(newValue);
+          }
+        }}
         style={styles.checkbox}
       />
       <Text>{label}</Text>
