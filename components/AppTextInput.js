@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
   container: {
     width: "90%",
     padding: 10,
+    justifyContent: "center",
   },
   input: {
     fontSize: 15,

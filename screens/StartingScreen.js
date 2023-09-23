@@ -25,7 +25,7 @@ function StartingScreen(props) {
           <AppText>Phone number</AppText>
           <AppTextInput></AppTextInput>
           <APPCheckBox label="I am not a robot"></APPCheckBox>
-          <View>
+          <View style={styles.bottonContainer}>
             <AppBotton
               title="reset"
               color="red"
@@ -44,24 +44,31 @@ function StartingScreen(props) {
 }
 
 const styles = StyleSheet.create({
+  bottomContainer: {
+    flex: 9,
+    justifyContent: "flext-start",
+  },
+  bottonContainer: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    width: "100%",
+    padding: 10,
+  },
   container: {
     flex: 1,
     backgroundColor: "lightsteelblue",
     alignItems: "center",
     justifyContent: "center",
   },
+  checkbox: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
   topContainer: {
     flex: 1,
     alignItems: "flex-start",
     justifyContent: "space-evenly",
-  },
-  bottomContainer: {
-    flex: 9,
-    justifyContent: "flext-start",
-  },
-  checkbox: {
-    flexDirection: "row",
-    alignItems: "center",
   },
 });
 

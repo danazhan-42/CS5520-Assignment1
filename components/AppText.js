@@ -10,8 +10,7 @@ const styles = StyleSheet.create({
     fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
     color: "darkslateblue",
     fontWeight: "bold",
-    paddingLeft: 10,
-    paddingTop: 10,
+    padding: 10,
   },
 });
 
