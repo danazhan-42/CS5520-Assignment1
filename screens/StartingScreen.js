@@ -5,7 +5,7 @@ import { SafeAreaView, StyleSheet, View } from "react-native";
 import Card from "../components/Card";
 import Header from "../components/Header";
 import AppText from "../components/AppText";
-import AppTextInput from "../components/AppTextInput";
+import ValidationTextInput from "../components/ValidationTextInput";
 import APPCheckBox from "../components/APPCheckBox";
 import AppBotton from "../components/AppBotton";
 
@@ -21,11 +21,11 @@ function StartingScreen(props) {
       <View style={styles.bottomContainer}>
         <Card>
           <AppText>Name</AppText>
-          <AppTextInput></AppTextInput>
+          <ValidationTextInput></ValidationTextInput>
           <AppText>Email address</AppText>
-          <AppTextInput></AppTextInput>
+          <ValidationTextInput></ValidationTextInput>
           <AppText>Phone number</AppText>
-          <AppTextInput></AppTextInput>
+          <ValidationTextInput></ValidationTextInput>
           <APPCheckBox
             label="I am not a robot"
             onValueChange={(newValue) => setIsCheckboxSelected(newValue)}
