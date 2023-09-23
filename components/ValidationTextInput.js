@@ -35,6 +35,7 @@ function ValidationTextInput({ regex, message, reset, onChangeText }) {
         onChangeText={handleTextChange}
         onEndEditing={() => validate(text)}
         value={text}
+        autoCapitalize="none"
       ></TextInput>
       <Text style={styles.msg}>{validationMessage}</Text>
     </View>

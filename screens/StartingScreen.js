@@ -67,7 +67,7 @@ function StartingScreen(props) {
           ></APPCheckBox>
           <View style={styles.bottonContainer}>
             <AppBotton
-              title="reset"
+              title="Reset"
               color="red"
               onPress={handleReset}
             ></AppBotton>

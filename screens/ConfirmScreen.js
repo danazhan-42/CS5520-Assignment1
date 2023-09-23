@@ -10,15 +10,16 @@ function ConfirmScreen({ userInfo, modalVisibility, hideModal }) {
       <SafeAreaView style={styles.container}>
         <Card>
           <AppText>
-            Hello {userInfo[0]} {"\n"} Please confirm the following information
-            is correct by pressing the continue button:
+            Hello {userInfo[0]}
+            {"\n"}Please confirm the following information is correct by
+            pressing the continue button:
           </AppText>
           <AppText style={styles.info}>
             {userInfo[1]} {"\n"}
             {userInfo[2]}
           </AppText>
           <View style={styles.buttonContainer}>
-            <AppButton title="Go Back" color="red" />
+            <AppButton title="Go Back" color="red" onPress={hideModal} />
             <AppButton title="Continue" color="blue" />
           </View>
         </Card>
