@@ -8,6 +8,7 @@ import AppText from "../components/AppText";
 import ValidationTextInput from "../components/ValidationTextInput";
 import APPCheckBox from "../components/APPCheckBox";
 import AppBotton from "../components/AppBotton";
+import ConfirmScreen from "./ConfirmScreen";
 
 function StartingScreen(props) {
   const [isCheckboxSelected, setIsCheckboxSelected] = useState(false);
@@ -64,6 +65,7 @@ function StartingScreen(props) {
           </View>
         </Card>
       </View>
+      <ConfirmScreen userInfo="" modalVisibility hideModal></ConfirmScreen>
     </SafeAreaView>
   );
 }
