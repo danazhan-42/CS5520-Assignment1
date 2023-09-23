@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Checkbox from "expo-checkbox";
 
-function APPCheckBox({ label, onValueChange }) {
+function APPCheckBox({ label, onValueChange, reset }) {
   const [isChecked, setChecked] = useState(false);
+
+  useEffect(() => {
+    setChecked(false);
+  }, [reset]);
 
   return (
     <View style={styles.container}>

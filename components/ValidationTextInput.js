@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TextInput, View, StyleSheet, Text } from "react-native";
 import { colors } from "../.expo/colors";
 
 function ValidationTextInput(props) {
   const [text, setText] = useState();
   const [validationMessage, setValidationMessage] = useState();
+
+  useEffect(() => {
+    setText("");
+  }, [props.reset]);
 
   const handleTextChange = (input) => {
     setText(input);

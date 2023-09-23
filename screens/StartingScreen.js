@@ -30,23 +30,24 @@ function StartingScreen(props) {
           <ValidationTextInput
             regex={/^[a-zA-Z ]{2,30}$/}
             validationMessage="Please enter a valid name"
-            reset={isReset}
+            reset={resetFlag}
           />
           <AppText>Email address</AppText>
           <ValidationTextInput
             regex={/^[^\s@]+@[^\s@]+\.[^\s@]+$/}
             validationMessage="Please enter a valid email"
-            reset={isReset}
+            reset={resetFlag}
           />
           <AppText>Phone number</AppText>
           <ValidationTextInput
             regex={/^\d{3}\d{3}\d{4}$/}
             validationMessage="Please enter a valid phone number of the form xxxxxxxxxx"
-            reset={isReset}
+            reset={resetFlag}
           />
           <APPCheckBox
             label="I am not a robot"
             onValueChange={setIsCheckboxSelected}
+            reset={resetFlag}
           ></APPCheckBox>
           <View style={styles.bottonContainer}>
             <AppBotton
