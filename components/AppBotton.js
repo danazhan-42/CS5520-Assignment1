@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, StyleSheet, View } from "react-native";
 
-function AppButton({ title, onPress, color, disabled }) {
+function AppButton({ title, onPress, color, disabled = false }) {
   return (
     <View style={styles.buttonContainer}>
       <Button
