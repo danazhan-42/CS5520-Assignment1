@@ -13,11 +13,20 @@ import ConfirmScreen from "./ConfirmScreen";
 function StartingScreen(props) {
   const [isCheckboxSelected, setIsCheckboxSelected] = useState(false);
   const [resetFlag, setResetFlag] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const handleReset = () => {
     setResetFlag(!resetFlag);
     setIsCheckboxSelected(false);
   };
+
+  function makeModalVisible() {
+    setIsModalVisible(true);
+  }
+
+  function makeModalInvisible() {
+    setIsModalVisible(false);
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -60,12 +69,15 @@ function StartingScreen(props) {
               title="Start"
               color="blue"
               disabled={!isCheckboxSelected}
-              onPress={() => console.log("y")}
+              onPress={makeModalVisible}
             ></AppBotton>
           </View>
         </Card>
       </View>
-      <ConfirmScreen userInfo="" modalVisibility hideModal></ConfirmScreen>
+      <ConfirmScreen
+        modalVisibility={isModalVisible}
+        hideModal={makeModalInvisible}
+      ></ConfirmScreen>
     </SafeAreaView>
   );
 }
