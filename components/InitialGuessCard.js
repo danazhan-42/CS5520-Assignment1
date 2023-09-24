@@ -37,7 +37,11 @@ export default function InitialGuessCard({ onConfirmGuess }) {
             style={styles.input}
           ></TextInput>
           <View style={styles.bottonContainer}>
-            <AppButton title="Reset" color="red"></AppButton>
+            <AppButton
+              title="Reset"
+              color="red"
+              onPress={() => setEnteredValue("")}
+            ></AppButton>
             <AppButton
               title="Confirm"
               color="blue"

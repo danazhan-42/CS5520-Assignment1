@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Screen from "../components/Screen";
 import InitialGuessCard from "../components/InitialGuessCard";
+import IncorrectGuessCard from "../components/IncorrectGuessCard";
 
 export default function GameScreen(props) {
   const [randomNumber, setRandomNumber] = useState(generateRandom(10, 20));
@@ -24,7 +25,7 @@ export default function GameScreen(props) {
 
   return (
     <Screen>
-      <InitialGuessCard></InitialGuessCard>
+      <IncorrectGuessCard></IncorrectGuessCard>
     </Screen>
   );
 }
