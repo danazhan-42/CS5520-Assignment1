@@ -9,6 +9,7 @@ import ValidationTextInput from "../components/ValidationTextInput";
 import APPCheckBox from "../components/APPCheckBox";
 import AppBotton from "../components/AppBotton";
 import ConfirmScreen from "./ConfirmScreen";
+import Screen from "../components/Screen";
 
 function StartingScreen(props) {
   const [isCheckboxSelected, setIsCheckboxSelected] = useState(false);
@@ -32,7 +33,7 @@ function StartingScreen(props) {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <Screen>
       <View style={styles.topContainer}>
         <Header></Header>
         <StatusBar style="auto" />
@@ -85,7 +86,7 @@ function StartingScreen(props) {
         modalVisibility={isModalVisible}
         hideModal={makeModalInvisible}
       ></ConfirmScreen>
-    </SafeAreaView>
+    </Screen>
   );
 }
 
@@ -100,12 +101,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
     padding: 10,
-  },
-  container: {
-    flex: 1,
-    backgroundColor: "lightsteelblue",
-    alignItems: "center",
-    justifyContent: "center",
   },
   checkbox: {
     flexDirection: "row",

@@ -1,13 +1,14 @@
 import React from "react";
-import { Modal, Text, StyleSheet, SafeAreaView, View } from "react-native";
+import { Modal, StyleSheet, View } from "react-native";
 import Card from "../components/Card";
 import AppButton from "../components/AppBotton";
 import AppText from "../components/AppText";
+import Screen from "../components/Screen";
 
 function ConfirmScreen({ userInfo, modalVisibility, hideModal }) {
   return (
     <Modal visible={modalVisibility}>
-      <SafeAreaView style={styles.container}>
+      <Screen>
         <Card>
           <AppText>
             Hello {userInfo[0]}
@@ -23,7 +24,7 @@ function ConfirmScreen({ userInfo, modalVisibility, hideModal }) {
             <AppButton title="Continue" color="blue" />
           </View>
         </Card>
-      </SafeAreaView>
+      </Screen>
     </Modal>
   );
 }
@@ -35,12 +36,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
     padding: 10,
-  },
-  container: {
-    flex: 1,
-    backgroundColor: "lightsteelblue",
-    alignItems: "center",
-    justifyContent: "center",
   },
   info: {
     color: "brown",
