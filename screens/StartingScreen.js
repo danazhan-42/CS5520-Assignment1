@@ -7,7 +7,7 @@ import Header from "../components/Header";
 import AppText from "../components/AppText";
 import ValidationTextInput from "../components/ValidationTextInput";
 import APPCheckBox from "../components/APPCheckBox";
-import AppBotton from "../components/AppBotton";
+import AppBotton from "../components/AppButton";
 import ConfirmScreen from "./ConfirmScreen";
 import Screen from "../components/Screen";
 

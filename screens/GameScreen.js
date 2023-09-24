@@ -2,36 +2,13 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
-import Card from "../components/Card";
-import Header from "../components/Header";
-import AppText from "../components/AppText";
-import ValidationTextInput from "../components/ValidationTextInput";
-import APPCheckBox from "../components/APPCheckBox";
-import AppBotton from "../components/AppBotton";
-import ConfirmScreen from "./ConfirmScreen";
 import Screen from "../components/Screen";
-import GameTextInput from "../components/GameTextInput";
+import InitialGuessCard from "../components/InitialGuessCard";
 
 export default function GameScreen(props) {
   return (
     <Screen>
-      <View style={styles.topContainer}>
-        <AppBotton title="Logout" color="blue"></AppBotton>
-      </View>
-      <View style={styles.middleContainer}>
-        <Header>Guess A Number Between 10 & 20</Header>
-        <StatusBar style="auto" />
-      </View>
-      <View style={styles.bottomContainer}>
-        <Card alignItems="center">
-          <AppText>Enter a Number</AppText>
-          <GameTextInput></GameTextInput>
-          <View style={styles.bottonContainer}>
-            <AppBotton title="Reset" color="red"></AppBotton>
-            <AppBotton title="Confirm" color="blue"></AppBotton>
-          </View>
-        </Card>
-      </View>
+      <InitialGuessCard></InitialGuessCard>
     </Screen>
   );
 }

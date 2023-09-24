@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, StyleSheet, View } from "react-native";
 import Card from "../components/Card";
-import AppButton from "../components/AppBotton";
+import AppButton from "../components/AppButton";
 import AppText from "../components/AppText";
 import Screen from "../components/Screen";
 
