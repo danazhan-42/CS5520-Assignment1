@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   header: {
     color: "darkslateblue",
     borderColor: "darkslateblue",
-    fontSize: 25,
+    fontSize: 20,
     fontWeight: "bold",
     padding: 5,
   },
