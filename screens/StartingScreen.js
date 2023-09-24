@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View } from "react-native";
+import { SafeAreaView, StyleSheet, View } from "react-native";
 
 import Card from "../components/Card";
 import Header from "../components/Header";
@@ -35,7 +35,7 @@ function StartingScreen(props) {
   return (
     <Screen>
       <View style={styles.topContainer}>
-        <Header></Header>
+        <Header>Welcome</Header>
         <StatusBar style="auto" />
       </View>
       <View style={styles.bottomContainer}>
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
   bottonContainer: {
     flexDirection: "row",
     justifyContent: "space-evenly",
-    alignItems: "center",
+    alignItems: "flex-start",
     width: "100%",
     padding: 10,
   },
