@@ -37,7 +37,7 @@ function ValidationTextInput({ regex, message, reset, onChangeText }) {
         value={text}
         autoCapitalize="none"
       ></TextInput>
-      <Text style={styles.msg}>{validationMessage}</Text>
+      <Text style={styles.msg}>{message}</Text>
     </View>
   );
 }
