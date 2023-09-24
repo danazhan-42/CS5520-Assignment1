@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, TextInput, View, Text } from "react-native";
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 
@@ -12,7 +12,7 @@ export default function InitialGuessCard({ onConfirmGuess }) {
   const [enteredValue, setEnteredValue] = useState();
 
   return (
-    <View>
+    <>
       <View style={styles.topContainer}>
         <AppButton title="Logout" color="blue"></AppButton>
       </View>
@@ -23,14 +23,18 @@ export default function InitialGuessCard({ onConfirmGuess }) {
       <View style={styles.bottomContainer}>
         <Card alignItems="center">
           <AppText>Enter a Number</AppText>
-          <GameTextInput></GameTextInput>
+          <TextInput
+            style={styles.input}
+            value={enteredValue}
+            onChangeText={setEnteredValue}
+          ></TextInput>
           <View style={styles.bottonContainer}>
             <AppButton title="Reset" color="red"></AppButton>
             <AppButton title="Confirm" color="blue"></AppButton>
           </View>
         </Card>
       </View>
-    </View>
+    </>
   );
 }
 
@@ -59,5 +63,14 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     width: "100%",
     padding: 10,
+  },
+  input: {
+    width: "20%",
+    fontSize: 15,
+    fontWeight: "bold",
+    borderBottomColor: "darkslateblue",
+    borderBottomWidth: 1,
+    textAlign: "center",
+    padding: 15,
   },
 });
