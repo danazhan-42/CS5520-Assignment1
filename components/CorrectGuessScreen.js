@@ -1,11 +1,15 @@
-import { StyleSheet, Text, View, TextInput, Image } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 
 import Card from "./Card";
 import AppButton from "./AppButton";
 import AppText from "./AppText";
 
-export default function IncorrectGuessCard({ onTryAgain }) {
+export default function CorrectGuessScreen({
+  number,
+  guesses,
+  onStartNewGame,
+}) {
   return (
     <>
       <View style={styles.topContainer}>
@@ -13,12 +17,20 @@ export default function IncorrectGuessCard({ onTryAgain }) {
       </View>
       <View style={styles.bottomContainer}>
         <Card alignItems="center">
-          <AppText style={styles.msg}>You did not guess correct!</AppText>
+          <AppText style={styles.msg}>
+            You guessed correct!{"\n"}Number of guesses: {guesses}
+          </AppText>
           <Image
-            source={require("../assets/sadface.png")}
+            source={{
+              url: "https://picsum.photos/id/14/100/100",
+            }}
             style={styles.image}
           ></Image>
-          <AppButton title="Try Again" color="blue"></AppButton>
+          <AppButton
+            title="New Game"
+            color="blue"
+            onPress={onStartNewGame}
+          ></AppButton>
         </Card>
       </View>
     </>
