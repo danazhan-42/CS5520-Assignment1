@@ -4,5 +4,5 @@ import GameScreen from "./screens/GameScreen";
 import StartingScreen from "./screens/StartingScreen";
 
 export default function App() {
-  return <GameScreen></GameScreen>;
+  return <StartingScreen></StartingScreen>;
 }

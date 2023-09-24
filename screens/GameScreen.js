@@ -23,7 +23,7 @@ export default function GameScreen(props) {
       </View>
 
       <View style={styles.bottomContainer}>
-        <Card style={styles.bottomContainer}>
+        <Card alignItems="center">
           <AppText>Enter a Number</AppText>
         </Card>
       </View>
