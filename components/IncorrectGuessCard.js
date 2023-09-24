@@ -14,7 +14,7 @@ export default function IncorrectGuessCard() {
       </View>
       <View style={styles.bottomContainer}>
         <Card alignItems="center">
-          <AppText>You did not guess correct!</AppText>
+          <AppText style={styles.msg}>You did not guess correct!</AppText>
           <Image
             source={require("../assets/sadface.png")}
             style={styles.image}
@@ -38,9 +38,11 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     width: "90%",
   },
-
   image: {
     width: 80,
     height: 80,
+  },
+  msg: {
+    paddingBottom: 30,
   },
 });
