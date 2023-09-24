@@ -1,8 +1,8 @@
 import { View, StyleSheet, Dimensions } from "react-native";
 import React from "react";
 
-const Card = ({ children }) => {
-  return <View style={styles.card}>{children}</View>;
+const Card = ({ children, alignItems = "flex-start" }) => {
+  return <View style={[styles.card, { alignItems }]}>{children}</View>;
 };
 
 const screenWidth = Dimensions.get("window").width;
