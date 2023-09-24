@@ -22,11 +22,14 @@ export default function GameScreen(props) {
         <Header>Guess A Number Between 10 & 20</Header>
         <StatusBar style="auto" />
       </View>
-
       <View style={styles.bottomContainer}>
         <Card alignItems="center">
           <AppText>Enter a Number</AppText>
           <GameTextInput></GameTextInput>
+          <View style={styles.bottonContainer}>
+            <AppBotton title="Reset" color="red"></AppBotton>
+            <AppBotton title="Confirm" color="blue"></AppBotton>
+          </View>
         </Card>
       </View>
     </Screen>
@@ -51,5 +54,12 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     justifyContent: "space-evenly",
     width: "90%",
+  },
+  bottonContainer: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "flex-start",
+    width: "100%",
+    padding: 10,
   },
 });

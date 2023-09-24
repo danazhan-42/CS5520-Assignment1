@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
     borderBottomColor: "darkslateblue",
     borderBottomWidth: 1,
     textAlign: "center",
+    padding: 15,
   },
 });
 export default GameTextInput;
