@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput, View, Text } from "react-native";
+import { StyleSheet, TextInput, View, Alert } from "react-native";
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 
@@ -6,10 +6,18 @@ import Card from "./Card";
 import AppButton from "./AppButton";
 import AppText from "./AppText";
 import Header from "./Header";
-import GameTextInput from "./GameTextInput";
 
 export default function InitialGuessCard({ onConfirmGuess }) {
   const [enteredValue, setEnteredValue] = useState();
+
+  const confirmInputHandler = () => {
+    const chosenNumber = parseInt(enteredValue);
+    if (chosenNumber >= 10 && chosenNumber <= 20) {
+      onConfirmGuess(chosenNumber);
+    } else {
+      Alert.alert("Please enter a number between 10 and 20.");
+    }
+  };
 
   return (
     <>
@@ -24,13 +32,17 @@ export default function InitialGuessCard({ onConfirmGuess }) {
         <Card alignItems="center">
           <AppText>Enter a Number</AppText>
           <TextInput
-            style={styles.input}
             value={enteredValue}
             onChangeText={setEnteredValue}
+            style={styles.input}
           ></TextInput>
           <View style={styles.bottonContainer}>
             <AppButton title="Reset" color="red"></AppButton>
-            <AppButton title="Confirm" color="blue"></AppButton>
+            <AppButton
+              title="Confirm"
+              color="blue"
+              onPress={confirmInputHandler}
+            ></AppButton>
           </View>
         </Card>
       </View>
