@@ -10,6 +10,7 @@ import APPCheckBox from "../components/APPCheckBox";
 import AppBotton from "../components/AppBotton";
 import ConfirmScreen from "./ConfirmScreen";
 import Screen from "../components/Screen";
+import GameTextInput from "../components/GameTextInput";
 
 export default function GameScreen(props) {
   return (
@@ -25,6 +26,7 @@ export default function GameScreen(props) {
       <View style={styles.bottomContainer}>
         <Card alignItems="center">
           <AppText>Enter a Number</AppText>
+          <GameTextInput></GameTextInput>
         </Card>
       </View>
     </Screen>
