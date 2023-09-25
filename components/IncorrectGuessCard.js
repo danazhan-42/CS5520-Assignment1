@@ -18,7 +18,11 @@ export default function IncorrectGuessCard({ onTryAgain }) {
             source={require("../assets/sadface.png")}
             style={styles.image}
           ></Image>
-          <AppButton title="Try Again" color="blue"></AppButton>
+          <AppButton
+            title="Try Again"
+            color="blue"
+            onPress={onTryAgain}
+          ></AppButton>
         </Card>
       </View>
     </>

@@ -6,7 +6,7 @@ import IncorrectGuessCard from "../components/IncorrectGuessCard";
 import CorrectGuessScreen from "../components/CorrectGuessScreen";
 
 export default function GameScreen(props) {
-  const [userGuess, setUserGuess] = useState();
+  const [userGuess, setUserGuess] = useState("");
   const [randomNumber, setRandomNumber] = useState(generateRandom(10, 20));
   const [guessCount, setGuessCount] = useState(0);
   const [isCorrectGuess, setIsCorrectGuess] = useState(false);
@@ -32,17 +32,26 @@ export default function GameScreen(props) {
 
   const handleNewGame = () => {
     setUserGuess("");
+    setGuessCount(0);
+    setRandomNumber(generateRandom(10, 20));
+    setIsCorrectGuess(false);
   };
 
   let displayScreen;
 
   if (!userGuess) {
-    <InitialGuessCard onConfirmGuess={handleGuess}></InitialGuessCard>;
+    displayScreen = <InitialGuessCard onConfirmGuess={handleGuess} />;
   } else if (userGuess && !isCorrectGuess) {
-    <IncorrectGuessCard onTryAgain={handleTryAgain}></IncorrectGuessCard>;
+    displayScreen = <IncorrectGuessCard onTryAgain={handleTryAgain} />;
   } else {
-    <CorrectGuessScreen onStartNewGame={handleNewGame}></CorrectGuessScreen>;
+    displayScreen = (
+      <CorrectGuessScreen
+        onStartNewGame={handleNewGame}
+        number={userGuess}
+        guesses={guessCount}
+      />
+    );
   }
 
-  return <Screen></Screen>;
+  return <Screen>{displayScreen}</Screen>;
 }

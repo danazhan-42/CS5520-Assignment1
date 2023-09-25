@@ -2,7 +2,14 @@ import React, { useEffect, useState } from "react";
 import { TextInput, View, StyleSheet, Text } from "react-native";
 import { colors } from "../.expo/colors";
 
-function ValidationTextInput({ regex, message, reset, onChangeText }) {
+function ValidationTextInput({
+  regex,
+  message,
+  reset,
+  // start,
+  onChangeText,
+  // onValidation,
+}) {
   const [text, setText] = useState();
   const [validationMessage, setValidationMessage] = useState();
 
@@ -21,7 +28,8 @@ function ValidationTextInput({ regex, message, reset, onChangeText }) {
 
   const validate = (input) => {
     const isValid = regex.test(input);
-    if (!isValid) {
+    // onValidation(isValid);
+    if (!isValid && start) {
       setValidationMessage(validationMessage);
     } else {
       setValidationMessage();

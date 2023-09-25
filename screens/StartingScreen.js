@@ -18,11 +18,20 @@ function StartingScreen(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  // const [isNameValid, setIsNameValid] = useState(true);
+  // const [startFlag, setStartFlag] = useState(false);
 
   const handleReset = () => {
     setResetFlag(!resetFlag);
     setIsCheckboxSelected(false);
   };
+
+  // const handleStart = () => {
+  //   setStartFlag(true);
+  //   if (isNameValid) {
+  //     makeModalVisible();
+  //   }
+  // };
 
   function makeModalVisible() {
     setIsModalVisible(true);
@@ -45,7 +54,9 @@ function StartingScreen(props) {
             regex={/^[a-zA-Z ]{2,30}$/}
             message="Please enter a valid name"
             reset={resetFlag}
+            // start={startFlag}
             onChangeText={setName}
+            // onValidation={setIsNameValid}
           />
           <AppText>Email address</AppText>
           <ValidationTextInput
