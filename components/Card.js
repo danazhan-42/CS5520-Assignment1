@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 
     //Flexbox
     justifyContent: "space-evenly",
-    alignItems: "flex-start",
+    alignItems: "stretch",
   },
 });
 
