@@ -65,7 +65,7 @@ export default function InitialGuessCard({ onConfirmGuess, handleLogout }) {
 const styles = StyleSheet.create({
   bottomContainer: {
     flex: 10,
-    justifyContent: "flext-start",
+    justifyContent: "flex-start",
     alignItems: "center",
   },
   middleContainer: {
@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     justifyContent: "space-evenly",
     width: "90%",
+    paddingTop: 100,
   },
   bottonContainer: {
     flexDirection: "row",
