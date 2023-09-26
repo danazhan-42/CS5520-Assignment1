@@ -14,13 +14,15 @@ import {
   validateEmail,
   validatePhoneNumber,
 } from "../components/validation";
+import Checkbox from "expo-checkbox";
 
 export default function StartingScreenV2() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [nameError, setNameError] = useState("");
-  const [startFlag, setStartFlag] = useState("");
+  const [startFlag, setStartFlag] = useState(false);
+  const [isChecked, setChecked] = useState(false);
 
   const handleNameInput = (text) => {
     setName(text);
@@ -48,19 +50,32 @@ export default function StartingScreenV2() {
             onChangeText={setName}
             style={styles.input}
           ></TextInput>
-          {nameError ? <Text style={styles.errorMsg}>{nameError}</Text> : null}
+          {startFlag && nameError ? (
+            <Text style={styles.errorMsg}>{nameError}</Text>
+          ) : null}
           <AppText>Emdail address</AppText>
           <TextInput style={styles.input}></TextInput>
           <AppText>Phone number</AppText>
           <TextInput style={styles.input}></TextInput>
-          <APPCheckBox label="I am not a robot"></APPCheckBox>
+          <View style={styles.section}>
+            <Checkbox
+              value={isChecked}
+              onValueChange={setChecked}
+              style={styles.checkbox}
+            />
+            <Text>I am not a robot</Text>
+          </View>
           <View style={styles.bottonContainer}>
             <AppBotton
               title="Reset"
               color="red"
               onPress={handleReset}
             ></AppBotton>
-            <AppBotton title="Start" color="blue"></AppBotton>
+            <AppBotton
+              title="Start"
+              color="blue"
+              disabled={!isChecked}
+            ></AppBotton>
           </View>
         </Card>
       </View>
@@ -96,5 +111,18 @@ const styles = StyleSheet.create({
   },
   errorMsg: {
     padding: 10,
+  },
+  section: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    padding: 8,
+  },
+  checkbox: {
+    margin: 8,
+  },
+  text: {
+    fontFamily: 15,
   },
 });
