@@ -31,7 +31,7 @@ export default function CorrectGuessScreen({
           </AppText>
           <Image
             source={{
-              url: `https://picsum.photos/id/${number}/100/100`,
+              uri: `https://picsum.photos/id/${number}/100/100`,
             }}
             style={styles.image}
           ></Image>
