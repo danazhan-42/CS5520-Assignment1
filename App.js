@@ -5,10 +5,11 @@ import { useState } from "react";
 
 export default function App() {
   const [isConfirmed, setIsConfirmed] = useState(false);
+  const [isLogout, setIsLogout] = useState(false);
 
-  return isConfirmed ? (
-    <GameScreen />
+  return isLogout ? (
+    <StartingScreenV2 onConfirmed={setIsConfirmed} />
   ) : (
-    <StartingScreenV2 setIsConfirmed={setIsConfirmed} />
+    <GameScreen onLogout={() => setIsLogout(true)} />
   );
 }

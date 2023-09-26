@@ -5,11 +5,15 @@ import InitialGuessCard from "../components/InitialGuessCard";
 import IncorrectGuessCard from "../components/IncorrectGuessCard";
 import CorrectGuessScreen from "../components/CorrectGuessScreen";
 
-export default function GameScreen(props) {
+export default function GameScreen({ onLogout }) {
   const [userGuess, setUserGuess] = useState("");
   const [randomNumber, setRandomNumber] = useState(generateRandom(10, 20));
   const [guessCount, setGuessCount] = useState(0);
   const [isCorrectGuess, setIsCorrectGuess] = useState(false);
+
+  const handleOnLogout = () => {
+    onLogout();
+  };
 
   function generateRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -40,15 +44,23 @@ export default function GameScreen(props) {
   let displayScreen;
 
   if (!userGuess) {
-    displayScreen = <InitialGuessCard onConfirmGuess={handleGuess} />;
+    displayScreen = (
+      <InitialGuessCard
+        onConfirmGuess={handleGuess}
+        onLogout={handleOnLogout}
+      />
+    );
   } else if (userGuess && !isCorrectGuess) {
-    displayScreen = <IncorrectGuessCard onTryAgain={handleTryAgain} />;
+    displayScreen = (
+      <IncorrectGuessCard onTryAgain={handleTryAgain} onLogout={setIsLogout} />
+    );
   } else {
     displayScreen = (
       <CorrectGuessScreen
         onStartNewGame={handleNewGame}
         number={userGuess}
         guesses={guessCount}
+        onLogout={setIsLogout}
       />
     );
   }

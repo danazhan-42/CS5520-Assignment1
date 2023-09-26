@@ -7,7 +7,7 @@ import AppButton from "./AppButton";
 import AppText from "./AppText";
 import Header from "./Header";
 
-export default function InitialGuessCard({ onConfirmGuess }) {
+export default function InitialGuessCard({ onConfirmGuess, onLogout }) {
   const [enteredValue, setEnteredValue] = useState();
 
   const confirmInputHandler = () => {
@@ -19,10 +19,18 @@ export default function InitialGuessCard({ onConfirmGuess }) {
     }
   };
 
+  const onLogoutHandler = () => {
+    onLogout();
+  };
+
   return (
     <>
       <View style={styles.topContainer}>
-        <AppButton title="Logout" color="blue"></AppButton>
+        <AppButton
+          title="Logout"
+          onPress={onLogoutHandler}
+          color="blue"
+        ></AppButton>
       </View>
       <View style={styles.middleContainer}>
         <Header>Guess A Number Between 10 & 20</Header>
