@@ -9,23 +9,29 @@ import APPCheckBox from "../components/APPCheckBox";
 import AppBotton from "../components/AppButton";
 import ConfirmScreen from "./ConfirmScreen";
 import Screen from "../components/Screen";
+import {
+  validateName,
+  validateEmail,
+  validatePhoneNumber,
+} from "../components/validation";
 
 export default function StartingScreenV2() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [nameError, setNameError] = useState();
-  const [startFlag, setStartFlag] = useState();
+  const [nameError, setNameError] = useState("");
+  const [startFlag, setStartFlag] = useState("");
 
   const handleNameInput = (text) => {
     setName(text);
-    setNameError(validateName(text) ? "" : "Please enter a valid email");
+    setNameError(validateName(text) ? "" : "Please enter a valid name");
   };
 
   const handleReset = () => {
     setName("");
     setEmail("");
     setPhone("");
+    setNameError("");
   };
 
   return (
@@ -39,12 +45,10 @@ export default function StartingScreenV2() {
           <AppText>Name</AppText>
           <TextInput
             value={name}
-            onChangeText={setNamedfd}
+            onChangeText={setName}
             style={styles.input}
           ></TextInput>
-          {emailError ? (
-            <Text style={{ color: "red" }}>{emailError}</Text>
-          ) : null}
+          {nameError ? <Text style={styles.errorMsg}>{nameError}</Text> : null}
           <AppText>Emdail address</AppText>
           <TextInput style={styles.input}></TextInput>
           <AppText>Phone number</AppText>
@@ -89,6 +93,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     textAlign: "center",
     padding: 10,
-    marginBottom: 30,
+  },
+  errorMsg: {
+    padding: 10,
   },
 });
