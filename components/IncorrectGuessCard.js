@@ -5,11 +5,18 @@ import Card from "./Card";
 import AppButton from "./AppButton";
 import AppText from "./AppText";
 
-export default function IncorrectGuessCard({ onTryAgain }) {
+export default function IncorrectGuessCard({ onTryAgain, handleLogout }) {
+  const onLogoutHandler = () => {
+    handleLogout(true);
+  };
   return (
     <>
       <View style={styles.topContainer}>
-        <AppButton title="Logout" color="blue"></AppButton>
+        <AppButton
+          title="Logout"
+          onPress={onLogoutHandler}
+          color="blue"
+        ></AppButton>
       </View>
       <View style={styles.bottomContainer}>
         <Card alignItems="center">

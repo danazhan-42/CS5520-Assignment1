@@ -9,11 +9,20 @@ export default function CorrectGuessScreen({
   number,
   guesses,
   onStartNewGame,
+  handleLogout,
 }) {
+  const onLogoutHandler = () => {
+    handleLogout(true);
+  };
+
   return (
     <>
       <View style={styles.topContainer}>
-        <AppButton title="Logout" color="blue"></AppButton>
+        <AppButton
+          title="Logout"
+          onPress={onLogoutHandler}
+          color="blue"
+        ></AppButton>
       </View>
       <View style={styles.bottomContainer}>
         <Card alignItems="center">

@@ -45,7 +45,7 @@ export default function GameScreen({ onLogout }) {
     );
   } else if (userGuess && !isCorrectGuess) {
     displayScreen = (
-      <IncorrectGuessCard onTryAgain={handleTryAgain} onLogout={onLogout} />
+      <IncorrectGuessCard onTryAgain={handleTryAgain} handleLogout={onLogout} />
     );
   } else {
     displayScreen = (
@@ -53,7 +53,7 @@ export default function GameScreen({ onLogout }) {
         onStartNewGame={handleNewGame}
         number={userGuess}
         guesses={guessCount}
-        onLogout={onLogout}
+        handleLogout={onLogout}
       />
     );
   }
