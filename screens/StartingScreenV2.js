@@ -24,6 +24,7 @@ export default function StartingScreenV2() {
   const [phoneError, setPhoneError] = useState("");
   const [startFlag, setStartFlag] = useState(false);
   const [isChecked, setChecked] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const handleNameInput = (text) => {
     setName(text);
@@ -57,7 +58,29 @@ export default function StartingScreenV2() {
 
   const handleStart = () => {
     setStartFlag(true);
+
+    const isNameValid = validateName(name);
+    const isEmailValid = validateEmail(email);
+    const isPhoneValid = validatePhone(phone);
+
+    setNameError(isNameValid ? "" : "Please enter a valid name");
+    setEmailError(isEmailValid ? "" : "Please enter a valid Email");
+    setPhoneError(
+      isPhoneValid ? "" : "Please enter a valid phone number of 10 digits"
+    );
+
+    if (isNameValid && isEmailValid && isPhoneValid) {
+      makeModalVisible();
+    }
   };
+
+  function makeModalVisible() {
+    setIsModalVisible(true);
+  }
+
+  function makeModalInvisible() {
+    setIsModalVisible(false);
+  }
 
   return (
     <Screen>
@@ -111,12 +134,17 @@ export default function StartingScreenV2() {
             <AppBotton
               title="Start"
               color="blue"
-              onPress={setStartFlag}
+              onPress={handleStart}
               disabled={!isChecked}
             ></AppBotton>
           </View>
         </Card>
       </View>
+      <ConfirmScreen
+        userInfo={[name, email, phone]}
+        modalVisibility={isModalVisible}
+        hideModal={makeModalInvisible}
+      ></ConfirmScreen>
     </Screen>
   );
 }
