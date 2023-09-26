@@ -63,11 +63,11 @@ export default function StartingScreenV2({ onConfirmed }) {
     const isEmailValid = validateEmail(email);
     const isPhoneValid = validatePhone(phone);
 
-    setNameError(isNameValid ? "" : "Please enter a valid name");
-    setEmailError(isEmailValid ? "" : "Please enter a valid Email");
-    setPhoneError(
-      isEmailValid ? "" : "Please enter a valid phone number of 10 digits"
-    );
+    // setNameError(isNameValid ? "" : "Please enter a valid name");
+    // setEmailError(isEmailValid ? "" : "Please enter a valid Email");
+    // setPhoneError(
+    //   isEmailValid ? "" : "Please enter a valid phone number of 10 digits"
+    // );
 
     if (isNameValid && isEmailValid && isPhoneValid) {
       makeModalVisible();
