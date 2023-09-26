@@ -43,6 +43,7 @@ export default function InitialGuessCard({ onConfirmGuess, handleLogout }) {
             value={enteredValue}
             onChangeText={setEnteredValue}
             style={styles.input}
+            keyboardType="numeric"
           ></TextInput>
           <View style={styles.bottonContainer}>
             <AppButton
@@ -80,7 +81,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     justifyContent: "space-evenly",
     width: "90%",
-    paddingTop: 100,
+    paddingTop: 30,
   },
   bottonContainer: {
     flexDirection: "row",

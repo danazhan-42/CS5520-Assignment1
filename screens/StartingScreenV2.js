@@ -114,6 +114,7 @@ export default function StartingScreenV2({ onConfirmed }) {
             value={phone}
             onChangeText={handlePhoneInput}
             style={styles.input}
+            keyboardType="numeric"
           ></TextInput>
           {startFlag && phoneError ? (
             <Text style={styles.errorMsg}>{phoneError}</Text>
@@ -170,15 +171,16 @@ const styles = StyleSheet.create({
   },
   input: {
     width: "100%",
-    fontSize: 15,
+    fontSize: 16,
     fontWeight: "bold",
-    borderBottomColor: "darkslateblue",
+    borderBottomColor: colors.textColor,
     borderBottomWidth: 1,
     textAlign: "center",
     padding: 10,
   },
   errorMsg: {
     padding: 10,
+    fontSize: 15,
   },
   section: {
     flexDirection: "row",
