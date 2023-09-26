@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, View, Text, TextInput } from "react-native";
+import { StyleSheet, View, Text, TextInput } from "react-native";
 
 import Card from "../components/Card";
 import Header from "../components/Header";
@@ -15,7 +15,7 @@ import {
 } from "../components/validation";
 import Checkbox from "expo-checkbox";
 
-export default function StartingScreenV2() {
+export default function StartingScreenV2({ setIsConfirmed }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -144,6 +144,7 @@ export default function StartingScreenV2() {
         userInfo={[name, email, phone]}
         modalVisibility={isModalVisible}
         hideModal={makeModalInvisible}
+        onConfirm={setIsConfirmed}
       ></ConfirmScreen>
     </Screen>
   );
