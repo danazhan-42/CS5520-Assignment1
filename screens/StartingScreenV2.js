@@ -14,7 +14,19 @@ export default function StartingScreenV2() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [validationMessage, setValidationMessage] = useState();
+  const [nameError, setNameError] = useState();
+  const [startFlag, setStartFlag] = useState();
+
+  const handleNameInput = (text) => {
+    setName(text);
+    setNameError(validateName(text) ? "" : "Please enter a valid email");
+  };
+
+  const handleReset = () => {
+    setName("");
+    setEmail("");
+    setPhone("");
+  };
 
   return (
     <Screen>
@@ -27,16 +39,23 @@ export default function StartingScreenV2() {
           <AppText>Name</AppText>
           <TextInput
             value={name}
-            onChangeText={""}
+            onChangeText={setNamedfd}
             style={styles.input}
           ></TextInput>
-          <AppText>Email address</AppText>
+          {emailError ? (
+            <Text style={{ color: "red" }}>{emailError}</Text>
+          ) : null}
+          <AppText>Emdail address</AppText>
           <TextInput style={styles.input}></TextInput>
           <AppText>Phone number</AppText>
           <TextInput style={styles.input}></TextInput>
           <APPCheckBox label="I am not a robot"></APPCheckBox>
           <View style={styles.bottonContainer}>
-            <AppBotton title="Reset" color="red"></AppBotton>
+            <AppBotton
+              title="Reset"
+              color="red"
+              onPress={handleReset}
+            ></AppBotton>
             <AppBotton title="Start" color="blue"></AppBotton>
           </View>
         </Card>
