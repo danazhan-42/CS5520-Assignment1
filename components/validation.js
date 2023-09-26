@@ -10,7 +10,7 @@ export const validateEmail = (email) => {
   return emailRegex.test(email);
 };
 
-export const validatePhoneNumber = (number) => {
+export const validatePhone = (number) => {
   // Check if the phone number has 10 digits
   const phoneRegex = /^\d{3}\d{3}\d{4}$/;
   return phoneRegex.test(number);

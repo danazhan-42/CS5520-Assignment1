@@ -5,14 +5,13 @@ import { SafeAreaView, StyleSheet, View, Text, TextInput } from "react-native";
 import Card from "../components/Card";
 import Header from "../components/Header";
 import AppText from "../components/AppText";
-import APPCheckBox from "../components/APPCheckBox";
 import AppBotton from "../components/AppButton";
 import ConfirmScreen from "./ConfirmScreen";
 import Screen from "../components/Screen";
 import {
   validateName,
   validateEmail,
-  validatePhoneNumber,
+  validatePhone,
 } from "../components/validation";
 import Checkbox from "expo-checkbox";
 
@@ -21,6 +20,8 @@ export default function StartingScreenV2() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [phoneError, setPhoneError] = useState("");
   const [startFlag, setStartFlag] = useState(false);
   const [isChecked, setChecked] = useState(false);
 
@@ -29,11 +30,33 @@ export default function StartingScreenV2() {
     setNameError(validateName(text) ? "" : "Please enter a valid name");
   };
 
+  const handleEmailInput = (text) => {
+    setEmail(text);
+    setEmailError(validateEmail(text) ? "" : "Please enter a valid Email");
+  };
+
+  const handlePhoneInput = (text) => {
+    setPhone(text);
+    setPhoneError(
+      validatePhone(text)
+        ? ""
+        : "Please enter a valid phone number of 10 digits"
+    );
+  };
+
   const handleReset = () => {
     setName("");
     setEmail("");
     setPhone("");
     setNameError("");
+    setEmailError("");
+    setPhoneError("");
+    setChecked(false);
+    setStartFlag(false);
+  };
+
+  const handleStart = () => {
+    setStartFlag(true);
   };
 
   return (
@@ -47,16 +70,30 @@ export default function StartingScreenV2() {
           <AppText>Name</AppText>
           <TextInput
             value={name}
-            onChangeText={setName}
+            onChangeText={handleNameInput}
             style={styles.input}
           ></TextInput>
           {startFlag && nameError ? (
             <Text style={styles.errorMsg}>{nameError}</Text>
           ) : null}
           <AppText>Emdail address</AppText>
-          <TextInput style={styles.input}></TextInput>
+          <TextInput
+            value={email}
+            onChangeText={handleEmailInput}
+            style={styles.input}
+          ></TextInput>
+          {startFlag && emailError ? (
+            <Text style={styles.errorMsg}>{emailError}</Text>
+          ) : null}
           <AppText>Phone number</AppText>
-          <TextInput style={styles.input}></TextInput>
+          <TextInput
+            value={phone}
+            onChangeText={handlePhoneInput}
+            style={styles.input}
+          ></TextInput>
+          {startFlag && phoneError ? (
+            <Text style={styles.errorMsg}>{phoneError}</Text>
+          ) : null}
           <View style={styles.section}>
             <Checkbox
               value={isChecked}
@@ -74,6 +111,7 @@ export default function StartingScreenV2() {
             <AppBotton
               title="Start"
               color="blue"
+              onPress={setStartFlag}
               disabled={!isChecked}
             ></AppBotton>
           </View>
@@ -86,7 +124,7 @@ export default function StartingScreenV2() {
 const styles = StyleSheet.create({
   bottomContainer: {
     flex: 9,
-    justifyContent: "flext-start",
+    justifyContent: "flex-start",
   },
   bottonContainer: {
     flexDirection: "row",
