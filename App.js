@@ -4,16 +4,19 @@ import StartingScreenV2 from "./screens/StartingScreenV2";
 import { useState } from "react";
 
 export default function App() {
-  const [isConfirmed, setIsConfirmed] = useState(false);
-  const [isLogout, setIsLogout] = useState(false);
+  const [isGameStarted, setIsGameStarted] = useState(false);
 
-  // default: starting screen
-  // 如果continue被触发，进入game screen
-  // 如果game screen 里面的logout被触发，进入starting screen，并把所有数据都清零，包括random number和用户输入的信息
+  const handleGameStart = () => {
+    setIsGameStarted(true);
+  };
 
-  return isConfirmed ? (
-    <GameScreen onLogout={setIsLogout} />
+  const handleLogout = () => {
+    setIsGameStarted(false);
+  };
+
+  return isGameStarted ? (
+    <GameScreen onLogout={handleLogout} />
   ) : (
-    <StartingScreenV2 onConfirmed={setIsConfirmed} />
+    <StartingScreenV2 onConfirmed={handleGameStart} />
   );
 }
