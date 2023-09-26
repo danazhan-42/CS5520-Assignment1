@@ -15,7 +15,7 @@ import {
 } from "../components/validation";
 import Checkbox from "expo-checkbox";
 
-export default function StartingScreenV2({ setIsConfirmed }) {
+export default function StartingScreenV2({ onConfirmed }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -144,7 +144,7 @@ export default function StartingScreenV2({ setIsConfirmed }) {
         userInfo={[name, email, phone]}
         modalVisibility={isModalVisible}
         hideModal={makeModalInvisible}
-        onConfirm={setIsConfirmed}
+        onConfirm={onConfirmed}
       ></ConfirmScreen>
     </Screen>
   );
