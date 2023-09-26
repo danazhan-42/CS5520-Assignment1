@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View, Text, TextInput } from "react-native";
 
+import { colors } from "../.expo/colors";
 import Card from "../components/Card";
 import Header from "../components/Header";
 import AppText from "../components/AppText";
@@ -128,12 +129,12 @@ export default function StartingScreenV2({ onConfirmed }) {
           <View style={styles.bottonContainer}>
             <AppBotton
               title="Reset"
-              color="red"
+              color={colors.buttonRed}
               onPress={handleReset}
             ></AppBotton>
             <AppBotton
               title="Start"
-              color="blue"
+              color={colors.buttonBlue}
               onPress={handleStart}
               disabled={!isChecked}
             ></AppBotton>

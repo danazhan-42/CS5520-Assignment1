@@ -2,9 +2,14 @@ import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
+import { colors } from "../.expo/colors";
+
 function Screen({ children }) {
   return (
-    <LinearGradient colors={["#85C1E9", "#D7BDE2"]} style={styles.gradient}>
+    <LinearGradient
+      colors={[colors.primary, colors.secondary]}
+      style={styles.gradient}
+    >
       <SafeAreaView style={styles.container}>{children}</SafeAreaView>
     </LinearGradient>
   );

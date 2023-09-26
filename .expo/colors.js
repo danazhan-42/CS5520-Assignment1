@@ -1,6 +1,7 @@
 export const colors = {
-  primary: "lightsteelblue",
-  secondary: "gainsboro",
-  buttonBlue: "#1B4F72",
-  buttonRed: "#A93226 ",
+  primary: "#85C1E9",
+  secondary: "#D7BDE2",
+  textColor: "darkslateblue",
+  buttonBlue: "blue",
+  buttonRed: "red",
 };
