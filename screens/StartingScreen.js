@@ -96,7 +96,6 @@ function StartingScreen(props) {
         userInfo={[name, email, phone]}
         modalVisibility={isModalVisible}
         hideModal={makeModalInvisible}
-        onConfirm={}
       ></ConfirmScreen>
     </Screen>
   );

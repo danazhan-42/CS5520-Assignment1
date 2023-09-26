@@ -11,10 +11,6 @@ export default function GameScreen({ onLogout }) {
   const [guessCount, setGuessCount] = useState(0);
   const [isCorrectGuess, setIsCorrectGuess] = useState(false);
 
-  const handleOnLogout = () => {
-    onLogout();
-  };
-
   function generateRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
@@ -45,10 +41,7 @@ export default function GameScreen({ onLogout }) {
 
   if (!userGuess) {
     displayScreen = (
-      <InitialGuessCard
-        onConfirmGuess={handleGuess}
-        onLogout={handleOnLogout}
-      />
+      <InitialGuessCard onConfirmGuess={handleGuess} handleLogout={onLogout} />
     );
   } else if (userGuess && !isCorrectGuess) {
     displayScreen = (

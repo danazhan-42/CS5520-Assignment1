@@ -10,6 +10,6 @@ export default function App() {
   return isLogout ? (
     <StartingScreenV2 onConfirmed={setIsConfirmed} />
   ) : (
-    <GameScreen onLogout={() => setIsLogout(true)} />
+    <GameScreen onLogout={setIsLogout} />
   );
 }

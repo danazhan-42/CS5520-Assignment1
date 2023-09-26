@@ -7,7 +7,7 @@ import AppButton from "./AppButton";
 import AppText from "./AppText";
 import Header from "./Header";
 
-export default function InitialGuessCard({ onConfirmGuess, onLogout }) {
+export default function InitialGuessCard({ onConfirmGuess, handleLogout }) {
   const [enteredValue, setEnteredValue] = useState();
 
   const confirmInputHandler = () => {
@@ -20,7 +20,7 @@ export default function InitialGuessCard({ onConfirmGuess, onLogout }) {
   };
 
   const onLogoutHandler = () => {
-    onLogout();
+    handleLogout(true);
   };
 
   return (
