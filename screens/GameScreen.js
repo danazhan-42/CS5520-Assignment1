@@ -4,7 +4,7 @@ import { View, StyleSheet, Button } from "react-native";
 import Screen from "../components/Screen";
 import InitialGuessCard from "../components/InitialGuessCard";
 import IncorrectGuessCard from "../components/IncorrectGuessCard";
-import CorrectGuessScreen from "../components/CorrectGuessScreen";
+import CorrectGuessScreen from "../components/CorrectGuessCard";
 
 export default function GameScreen({ onLogout }) {
   const [userGuess, setUserGuess] = useState("");
