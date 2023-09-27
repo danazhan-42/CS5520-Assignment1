@@ -5,6 +5,7 @@ import { StatusBar } from "expo-status-bar";
 import Card from "./Card";
 import AppText from "./AppText";
 import Header from "./Header";
+import { colors } from "../.expo/colors";
 
 export default function InitialGuessCard({ onConfirmGuess }) {
   const [enteredValue, setEnteredValue] = useState();
@@ -20,9 +21,6 @@ export default function InitialGuessCard({ onConfirmGuess }) {
 
   return (
     <>
-      {/* <View style={styles.topContainer}>
-        <Button title="Logout" onPress={onLogoutHandler} color="blue"></Button>
-      </View> */}
       <View style={styles.topContainer}>
         <Header>Guess A Number Between 10 & 20</Header>
         <StatusBar style="auto" />
@@ -58,7 +56,7 @@ const styles = StyleSheet.create({
   bottonContainer: {
     flexDirection: "row",
     justifyContent: "space-evenly",
-    alignItems: "flex-start",
+    alignItems: "center",
     width: "100%",
     margin: 15,
   },
@@ -71,7 +69,7 @@ const styles = StyleSheet.create({
     width: "20%",
     fontSize: 15,
     fontWeight: "bold",
-    borderBottomColor: "darkslateblue",
+    borderBottomColor: colors.textColor,
     borderBottomWidth: 1,
     textAlign: "center",
     padding: 15,
@@ -79,7 +77,7 @@ const styles = StyleSheet.create({
   },
   topContainer: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "flex-end",
     alignItems: "center",
     width: "100%",
     paddingBottom: 30,

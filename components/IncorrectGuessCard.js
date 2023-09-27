@@ -7,9 +7,6 @@ import AppText from "./AppText";
 export default function IncorrectGuessCard({ onTryAgain }) {
   return (
     <>
-      {/* <View style={styles.topContainer}>
-        <Button title="Logout" onPress={onLogoutHandler} color="blue"></Button>
-      </View> */}
       <View style={styles.bottomContainer}>
         <Card>
           <AppText style={{ alignSelf: "center" }}>

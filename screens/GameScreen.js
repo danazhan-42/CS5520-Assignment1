@@ -70,7 +70,7 @@ export default function GameScreen({ onLogout }) {
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    flex: 1,
+    height: 90,
     alignItems: "flex-end",
     justifyContent: "center",
     width: "80%",

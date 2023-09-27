@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Button, Modal, StyleSheet, View } from "react-native";
+
 import Card from "../components/Card";
 import AppText from "../components/AppText";
 import Screen from "../components/Screen";
+import { colors } from "../.expo/colors";
 
 function ConfirmScreen({ userInfo, modalVisibility, hideModal, onConfirm }) {
   const [isConfirmed, setIsConfirmed] = useState(false);
@@ -46,7 +48,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   info: {
-    color: "brown",
+    color: colors.brown,
   },
 });
 

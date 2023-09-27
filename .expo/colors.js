@@ -6,4 +6,5 @@ export const colors = {
   buttonRed: "red",
   cardBackground: "#D5DBDB",
   black: "#17202A",
+  brown: "brown",
 };
