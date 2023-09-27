@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View, Text, TextInput } from "react-native";
+import { StyleSheet, View, Text, TextInput, Button } from "react-native";
 
 import { colors } from "../.expo/colors";
 import Card from "../components/Card";
 import Header from "../components/Header";
 import AppText from "../components/AppText";
-import AppBotton from "../components/AppButton";
 import ConfirmScreen from "./ConfirmScreen";
 import Screen from "../components/Screen";
 import {
@@ -87,10 +86,8 @@ export default function StartingScreenV2({ onConfirmed }) {
     // The Parent container
     <Screen>
       {/* The first child container */}
-      {/* <View style={styles.topContainer}> */}
       <Header>Welcome</Header>
       <StatusBar style="auto" />
-      {/* </View> */}
       {/* The second child container */}
       <View style={styles.bottomContainer}>
         <Card>
@@ -103,7 +100,7 @@ export default function StartingScreenV2({ onConfirmed }) {
           {startFlag && nameError ? (
             <Text style={styles.errorMsg}>{nameError}</Text>
           ) : null}
-          <AppText>Emdail address</AppText>
+          <AppText style={{ paddingTop: 30 }}>Emdail address</AppText>
           <TextInput
             value={email}
             onChangeText={handleEmailInput}
@@ -112,7 +109,7 @@ export default function StartingScreenV2({ onConfirmed }) {
           {startFlag && emailError ? (
             <Text style={styles.errorMsg}>{emailError}</Text>
           ) : null}
-          <AppText>Phone number</AppText>
+          <AppText style={{ paddingTop: 30 }}>Phone number</AppText>
           <TextInput
             value={phone}
             onChangeText={handlePhoneInput}
@@ -122,7 +119,7 @@ export default function StartingScreenV2({ onConfirmed }) {
           {startFlag && phoneError ? (
             <Text style={styles.errorMsg}>{phoneError}</Text>
           ) : null}
-          <View style={styles.section}>
+          <View style={styles.checkBoxContainer}>
             <Checkbox
               value={isChecked}
               onValueChange={setChecked}
@@ -131,17 +128,17 @@ export default function StartingScreenV2({ onConfirmed }) {
             <Text>I am not a robot</Text>
           </View>
           <View style={styles.bottonContainer}>
-            <AppBotton
+            <Button
               title="Reset"
               color={colors.buttonRed}
               onPress={handleReset}
-            ></AppBotton>
-            <AppBotton
+            ></Button>
+            <Button
               title="Start"
               color={colors.buttonBlue}
               onPress={handleStart}
               disabled={!isChecked}
-            ></AppBotton>
+            ></Button>
           </View>
         </Card>
       </View>
@@ -161,39 +158,35 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
   },
   bottonContainer: {
+    //backgroundColor: "tomato",
     flexDirection: "row",
-    justifyContent: "space-evenly",
-    alignItems: "flex-start",
     width: "100%",
-    padding: 10,
-  },
-  topContainer: {
-    flex: 1,
-    alignItems: "flex-start",
     justifyContent: "space-evenly",
+    margin: 15,
+  },
+  checkBoxContainer: {
+    flexDirection: "row",
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 30,
+  },
+  checkbox: {
+    margin: 8,
+  },
+  errorMsg: {
+    fontSize: 15,
+    alignSelf: "flex-start",
   },
   input: {
     width: "100%",
     fontSize: 16,
     fontWeight: "bold",
+    textAlign: "center",
     borderBottomColor: colors.textColor,
     borderBottomWidth: 1,
-    textAlign: "center",
+    alignSelf: "center",
     padding: 10,
-  },
-  errorMsg: {
-    padding: 10,
-    fontSize: 15,
-  },
-  section: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    width: "100%",
-    padding: 8,
-  },
-  checkbox: {
-    margin: 8,
   },
   text: {
     fontFamily: 15,
