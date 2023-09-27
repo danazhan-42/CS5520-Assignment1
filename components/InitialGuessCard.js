@@ -6,7 +6,7 @@ import Card from "./Card";
 import AppText from "./AppText";
 import Header from "./Header";
 
-export default function InitialGuessCard({ onConfirmGuess, handleLogout }) {
+export default function InitialGuessCard({ onConfirmGuess }) {
   const [enteredValue, setEnteredValue] = useState();
 
   const confirmInputHandler = () => {
@@ -18,16 +18,12 @@ export default function InitialGuessCard({ onConfirmGuess, handleLogout }) {
     }
   };
 
-  const onLogoutHandler = () => {
-    handleLogout(true);
-  };
-
   return (
     <>
-      <View style={styles.topContainer}>
+      {/* <View style={styles.topContainer}>
         <Button title="Logout" onPress={onLogoutHandler} color="blue"></Button>
-      </View>
-      <View style={styles.middleContainer}>
+      </View> */}
+      <View style={styles.topContainer}>
         <Header>Guess A Number Between 10 & 20</Header>
         <StatusBar style="auto" />
       </View>
@@ -81,18 +77,11 @@ const styles = StyleSheet.create({
     padding: 15,
     marginBottom: 15,
   },
-  middleContainer: {
+  topContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
     paddingBottom: 30,
-  },
-  topContainer: {
-    flex: 1,
-    alignItems: "flex-end",
-    justifyContent: "space-evenly",
-    width: "90%",
-    paddingTop: 30,
   },
 });

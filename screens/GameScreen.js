@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { View, StyleSheet, Button } from "react-native";
 
 import Screen from "../components/Screen";
 import InitialGuessCard from "../components/InitialGuessCard";
@@ -37,26 +38,42 @@ export default function GameScreen({ onLogout }) {
     setIsCorrectGuess(false);
   };
 
+  const handleLogout = () => {
+    onLogout(true);
+  };
+
   let displayScreen;
 
   if (!userGuess) {
-    displayScreen = (
-      <InitialGuessCard onConfirmGuess={handleGuess} handleLogout={onLogout} />
-    );
+    displayScreen = <InitialGuessCard onConfirmGuess={handleGuess} />;
   } else if (userGuess && !isCorrectGuess) {
-    displayScreen = (
-      <IncorrectGuessCard onTryAgain={handleTryAgain} handleLogout={onLogout} />
-    );
+    displayScreen = <IncorrectGuessCard onTryAgain={handleTryAgain} />;
   } else {
     displayScreen = (
       <CorrectGuessScreen
         onStartNewGame={handleNewGame}
         number={userGuess}
         guesses={guessCount}
-        handleLogout={onLogout}
       />
     );
   }
 
-  return <Screen>{displayScreen}</Screen>;
+  return (
+    <Screen>
+      <View style={styles.topContainer}>
+        <Button title="Logout" onPress={handleLogout} color="blue"></Button>
+      </View>
+      {displayScreen}
+    </Screen>
+  );
 }
+
+const styles = StyleSheet.create({
+  topContainer: {
+    flex: 1,
+    alignItems: "flex-end",
+    justifyContent: "space-evenly",
+    width: "90%",
+    paddingTop: 30,
+  },
+});
