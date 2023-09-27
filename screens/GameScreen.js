@@ -60,7 +60,7 @@ export default function GameScreen({ onLogout }) {
 
   return (
     <Screen>
-      <View style={styles.topContainer}>
+      <View style={styles.buttonContainer}>
         <Button title="Logout" onPress={handleLogout} color="blue"></Button>
       </View>
       {displayScreen}
@@ -69,11 +69,12 @@ export default function GameScreen({ onLogout }) {
 }
 
 const styles = StyleSheet.create({
-  topContainer: {
+  buttonContainer: {
     flex: 1,
     alignItems: "flex-end",
     justifyContent: "space-evenly",
     width: "90%",
     paddingTop: 30,
+    marginBottom: 20,
   },
 });
