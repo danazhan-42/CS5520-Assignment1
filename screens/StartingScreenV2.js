@@ -19,6 +19,9 @@ export default function StartingScreenV2({ onConfirmed }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [isNameValid, setIsNameValid] = useState(false);
+  const [isEmailValid, setIsEmailValid] = useState(false);
+  const [isPhoneValid, setIsPhoneValid] = useState(false);
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [phoneError, setPhoneError] = useState("");
@@ -28,21 +31,17 @@ export default function StartingScreenV2({ onConfirmed }) {
 
   const handleNameInput = (text) => {
     setName(text);
-    setNameError(validateName(text) ? "" : "Please enter a valid name");
+    setIsNameValid(validateName(text));
   };
 
   const handleEmailInput = (text) => {
     setEmail(text);
-    setEmailError(validateEmail(text) ? "" : "Please enter a valid Email");
+    setIsEmailValid(validateEmail(text));
   };
 
   const handlePhoneInput = (text) => {
     setPhone(text);
-    setPhoneError(
-      validatePhone(text)
-        ? ""
-        : "Please enter a valid phone number of 10 digits"
-    );
+    setIsPhoneValid(validatePhone(text));
   };
 
   const handleReset = () => {
@@ -96,18 +95,20 @@ export default function StartingScreenV2({ onConfirmed }) {
             value={name}
             onChangeText={handleNameInput}
             style={styles.input}
+            autoCapitalize="none"
           ></TextInput>
-          {startFlag && nameError ? (
-            <Text style={styles.errorMsg}>{nameError}</Text>
+          {startFlag && !isNameValid ? (
+            <Text style={styles.errorMsg}>Please enter a valid name</Text>
           ) : null}
           <AppText style={{ paddingTop: 30 }}>Emdail address</AppText>
           <TextInput
             value={email}
             onChangeText={handleEmailInput}
             style={styles.input}
+            autoCapitalize="none"
           ></TextInput>
-          {startFlag && emailError ? (
-            <Text style={styles.errorMsg}>{emailError}</Text>
+          {startFlag && !isEmailValid ? (
+            <Text style={styles.errorMsg}>Please enter a valid Email</Text>
           ) : null}
           <AppText style={{ paddingTop: 30 }}>Phone number</AppText>
           <TextInput
@@ -116,8 +117,10 @@ export default function StartingScreenV2({ onConfirmed }) {
             style={styles.input}
             keyboardType="numeric"
           ></TextInput>
-          {startFlag && phoneError ? (
-            <Text style={styles.errorMsg}>{phoneError}</Text>
+          {startFlag && !isPhoneValid ? (
+            <Text style={styles.errorMsg}>
+              Please enter a valid phone number of 10 digits
+            </Text>
           ) : null}
           <View style={styles.checkBoxContainer}>
             <Checkbox
