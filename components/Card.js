@@ -3,7 +3,7 @@ import React from "react";
 
 import { colors } from "../.expo/colors";
 
-const Card = ({ children, alignItems = "flex-start" }) => {
+const Card = ({ children, alignItems }) => {
   return <View style={[styles.card, { alignItems }]}>{children}</View>;
 };
 
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 
     //Flexbox
     justifyContent: "space-evenly",
-    alignItems: "stretch",
+    alignItems: "flex-start",
   },
 });
 

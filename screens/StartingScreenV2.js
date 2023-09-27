@@ -84,11 +84,14 @@ export default function StartingScreenV2({ onConfirmed }) {
   }
 
   return (
+    // The Parent container
     <Screen>
-      <View style={styles.topContainer}>
-        <Header>Welcome</Header>
-        <StatusBar style="auto" />
-      </View>
+      {/* The first child container */}
+      {/* <View style={styles.topContainer}> */}
+      <Header>Welcome</Header>
+      <StatusBar style="auto" />
+      {/* </View> */}
+      {/* The second child container */}
       <View style={styles.bottomContainer}>
         <Card>
           <AppText>Name</AppText>
