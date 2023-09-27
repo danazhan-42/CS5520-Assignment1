@@ -79,11 +79,12 @@ const styles = StyleSheet.create({
     paddingTop: 30,
   },
   bottonContainer: {
+    backgroundColor: "tomato",
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "flex-start",
     width: "100%",
-    padding: 10,
+    margin: 15,
   },
   input: {
     width: "20%",
