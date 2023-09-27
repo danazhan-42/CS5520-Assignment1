@@ -32,8 +32,8 @@ export default function InitialGuessCard({ onConfirmGuess, handleLogout }) {
         <StatusBar style="auto" />
       </View>
       <View style={styles.bottomContainer}>
-        <Card alignItems="center">
-          <AppText>Enter a Number</AppText>
+        <Card>
+          <AppText style={{ alignSelf: "center" }}>Enter a Number</AppText>
           <TextInput
             value={enteredValue}
             onChangeText={setEnteredValue}
@@ -59,10 +59,27 @@ export default function InitialGuessCard({ onConfirmGuess, handleLogout }) {
 }
 
 const styles = StyleSheet.create({
+  bottonContainer: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "flex-start",
+    width: "100%",
+    margin: 15,
+  },
   bottomContainer: {
     flex: 10,
     justifyContent: "flex-start",
     alignItems: "center",
+  },
+  input: {
+    width: "20%",
+    fontSize: 15,
+    fontWeight: "bold",
+    borderBottomColor: "darkslateblue",
+    borderBottomWidth: 1,
+    textAlign: "center",
+    padding: 15,
+    marginBottom: 15,
   },
   middleContainer: {
     flex: 1,
@@ -77,22 +94,5 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     width: "90%",
     paddingTop: 30,
-  },
-  bottonContainer: {
-    backgroundColor: "tomato",
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    alignItems: "flex-start",
-    width: "100%",
-    margin: 15,
-  },
-  input: {
-    width: "20%",
-    fontSize: 15,
-    fontWeight: "bold",
-    borderBottomColor: "darkslateblue",
-    borderBottomWidth: 1,
-    textAlign: "center",
-    padding: 15,
   },
 });

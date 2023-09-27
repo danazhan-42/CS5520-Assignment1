@@ -14,8 +14,10 @@ export default function IncorrectGuessCard({ onTryAgain, handleLogout }) {
         <Button title="Logout" onPress={onLogoutHandler} color="blue"></Button>
       </View>
       <View style={styles.bottomContainer}>
-        <Card alignItems="center">
-          <AppText style={styles.msg}>You did not guess correct!</AppText>
+        <Card>
+          <AppText style={{ alignSelf: "center" }}>
+            You did not guess correct!
+          </AppText>
           <Image
             source={require("../assets/sadface.png")}
             style={styles.image}
@@ -28,10 +30,18 @@ export default function IncorrectGuessCard({ onTryAgain, handleLogout }) {
 }
 
 const styles = StyleSheet.create({
+  button: {
+    margin: 30,
+  },
   bottomContainer: {
     flex: 10,
     justifyContent: "flext-start",
     alignItems: "center",
+  },
+  image: {
+    width: 80,
+    height: 80,
+    margin: 30,
   },
   topContainer: {
     flex: 1,
@@ -39,12 +49,5 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     width: "90%",
     height: "auto",
-  },
-  image: {
-    width: 80,
-    height: 80,
-  },
-  msg: {
-    paddingBottom: 30,
   },
 });

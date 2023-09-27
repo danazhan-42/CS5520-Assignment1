@@ -20,8 +20,8 @@ export default function CorrectGuessScreen({
         <Button title="Logout" onPress={onLogoutHandler} color="blue"></Button>
       </View>
       <View style={styles.bottomContainer}>
-        <Card alignItems="center">
-          <AppText style={styles.msg}>
+        <Card>
+          <AppText style={{ alignSelf: "center" }}>
             You guessed correct!{"\n"}Number of guesses: {guesses}
           </AppText>
           <Image
@@ -44,7 +44,7 @@ export default function CorrectGuessScreen({
 const styles = StyleSheet.create({
   bottomContainer: {
     flex: 10,
-    justifyContent: "flext-start",
+    justifyContent: "flex-start",
     alignItems: "center",
   },
   topContainer: {
@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
   image: {
     width: 80,
     height: 80,
+    margin: 20,
   },
   msg: {
     paddingBottom: 30,

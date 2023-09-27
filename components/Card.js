@@ -3,8 +3,8 @@ import React from "react";
 
 import { colors } from "../.expo/colors";
 
-const Card = ({ children }) => {
-  return <View style={styles.card}>{children}</View>;
+const Card = ({ children, style }) => {
+  return <View style={[styles.card, style]}>{children}</View>;
 };
 
 const screenWidth = Dimensions.get("window").width;
@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 10,
+    paddingBottom: 30,
   },
 });
 
