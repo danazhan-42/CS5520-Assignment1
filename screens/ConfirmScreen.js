@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Modal, StyleSheet, View } from "react-native";
+import { Button, Modal, StyleSheet, View } from "react-native";
 import Card from "../components/Card";
-import AppButton from "../components/AppButton";
 import AppText from "../components/AppText";
 import Screen from "../components/Screen";
 
@@ -25,12 +24,12 @@ function ConfirmScreen({ userInfo, modalVisibility, hideModal, onConfirm }) {
             {userInfo[2]}
           </AppText>
           <View style={styles.buttonContainer}>
-            <AppButton title="Go Back" color="red" onPress={hideModal} />
-            <AppButton
+            <Button title="Go Back" color="red" onPress={hideModal}></Button>
+            <Button
               title="Continue"
               color="blue"
               onPress={handleOnConfirm}
-            />
+            ></Button>
           </View>
         </Card>
       </Screen>

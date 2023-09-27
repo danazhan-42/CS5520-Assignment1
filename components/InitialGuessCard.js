@@ -1,9 +1,8 @@
-import { StyleSheet, TextInput, View, Alert } from "react-native";
+import { StyleSheet, TextInput, View, Alert, Button } from "react-native";
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 
 import Card from "./Card";
-import AppButton from "./AppButton";
 import AppText from "./AppText";
 import Header from "./Header";
 
@@ -26,11 +25,7 @@ export default function InitialGuessCard({ onConfirmGuess, handleLogout }) {
   return (
     <>
       <View style={styles.topContainer}>
-        <AppButton
-          title="Logout"
-          onPress={onLogoutHandler}
-          color="blue"
-        ></AppButton>
+        <Button title="Logout" onPress={onLogoutHandler} color="blue"></Button>
       </View>
       <View style={styles.middleContainer}>
         <Header>Guess A Number Between 10 & 20</Header>
@@ -46,16 +41,16 @@ export default function InitialGuessCard({ onConfirmGuess, handleLogout }) {
             keyboardType="numeric"
           ></TextInput>
           <View style={styles.bottonContainer}>
-            <AppButton
+            <Button
               title="Reset"
               color="red"
               onPress={() => setEnteredValue("")}
-            ></AppButton>
-            <AppButton
+            ></Button>
+            <Button
               title="Confirm"
               color="blue"
               onPress={confirmInputHandler}
-            ></AppButton>
+            ></Button>
           </View>
         </Card>
       </View>

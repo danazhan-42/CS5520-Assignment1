@@ -1,8 +1,7 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, Button } from "react-native";
 import React from "react";
 
 import Card from "./Card";
-import AppButton from "./AppButton";
 import AppText from "./AppText";
 
 export default function CorrectGuessScreen({
@@ -18,11 +17,7 @@ export default function CorrectGuessScreen({
   return (
     <>
       <View style={styles.topContainer}>
-        <AppButton
-          title="Logout"
-          onPress={onLogoutHandler}
-          color="blue"
-        ></AppButton>
+        <Button title="Logout" onPress={onLogoutHandler} color="blue"></Button>
       </View>
       <View style={styles.bottomContainer}>
         <Card alignItems="center">
@@ -35,11 +30,11 @@ export default function CorrectGuessScreen({
             }}
             style={styles.image}
           ></Image>
-          <AppButton
+          <Button
             title="New Game"
             color="blue"
             onPress={onStartNewGame}
-          ></AppButton>
+          ></Button>
         </Card>
       </View>
     </>

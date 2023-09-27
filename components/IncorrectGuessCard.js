@@ -1,8 +1,7 @@
-import { StyleSheet, Text, View, TextInput, Image } from "react-native";
+import { StyleSheet, Text, View, TextInput, Image, Button } from "react-native";
 import React from "react";
 
 import Card from "./Card";
-import AppButton from "./AppButton";
 import AppText from "./AppText";
 
 export default function IncorrectGuessCard({ onTryAgain, handleLogout }) {
@@ -12,11 +11,7 @@ export default function IncorrectGuessCard({ onTryAgain, handleLogout }) {
   return (
     <>
       <View style={styles.topContainer}>
-        <AppButton
-          title="Logout"
-          onPress={onLogoutHandler}
-          color="blue"
-        ></AppButton>
+        <Button title="Logout" onPress={onLogoutHandler} color="blue"></Button>
       </View>
       <View style={styles.bottomContainer}>
         <Card alignItems="center">
@@ -25,11 +20,7 @@ export default function IncorrectGuessCard({ onTryAgain, handleLogout }) {
             source={require("../assets/sadface.png")}
             style={styles.image}
           ></Image>
-          <AppButton
-            title="Try Again"
-            color="blue"
-            onPress={onTryAgain}
-          ></AppButton>
+          <Button title="Try Again" color="blue" onPress={onTryAgain}></Button>
         </Card>
       </View>
     </>
