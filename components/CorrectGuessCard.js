@@ -11,34 +11,23 @@ export default function CorrectGuessScreen({
 }) {
   return (
     <>
-      <View style={styles.bottomContainer}>
-        <Card>
-          <AppText style={{ alignSelf: "center" }}>
-            You guessed correct!{"\n"}Number of guesses: {guesses}
-          </AppText>
-          <Image
-            source={{
-              uri: `https://picsum.photos/id/${number}/100/100`,
-            }}
-            style={styles.image}
-          ></Image>
-          <Button
-            title="New Game"
-            color="blue"
-            onPress={onStartNewGame}
-          ></Button>
-        </Card>
-      </View>
+      <Card>
+        <AppText style={{ alignSelf: "center" }}>
+          You guessed correct!{"\n"}Number of guesses: {guesses}
+        </AppText>
+        <Image
+          source={{
+            uri: `https://picsum.photos/id/${number}/100/100`,
+          }}
+          style={styles.image}
+        ></Image>
+        <Button title="New Game" color="blue" onPress={onStartNewGame}></Button>
+      </Card>
     </>
   );
 }
 
 const styles = StyleSheet.create({
-  bottomContainer: {
-    flex: 10,
-    justifyContent: "flex-start",
-    alignItems: "center",
-  },
   topContainer: {
     flex: 1,
     alignItems: "flex-end",

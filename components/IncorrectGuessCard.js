@@ -7,31 +7,21 @@ import AppText from "./AppText";
 export default function IncorrectGuessCard({ onTryAgain }) {
   return (
     <>
-      <View style={styles.bottomContainer}>
-        <Card>
-          <AppText style={{ alignSelf: "center" }}>
-            You did not guess correct!
-          </AppText>
-          <Image
-            source={require("../assets/sadface.png")}
-            style={styles.image}
-          ></Image>
-          <Button title="Try Again" color="blue" onPress={onTryAgain}></Button>
-        </Card>
-      </View>
+      <Card>
+        <AppText style={{ alignSelf: "center" }}>
+          You did not guess correct!
+        </AppText>
+        <Image
+          source={require("../assets/sadface.png")}
+          style={styles.image}
+        ></Image>
+        <Button title="Try Again" color="blue" onPress={onTryAgain}></Button>
+      </Card>
     </>
   );
 }
 
 const styles = StyleSheet.create({
-  button: {
-    margin: 30,
-  },
-  bottomContainer: {
-    flex: 10,
-    justifyContent: "flext-start",
-    alignItems: "center",
-  },
   image: {
     width: 80,
     height: 80,
