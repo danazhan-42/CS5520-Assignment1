@@ -22,9 +22,6 @@ export default function StartingScreenV2({ onConfirmed }) {
   const [isNameValid, setIsNameValid] = useState(false);
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [isPhoneValid, setIsPhoneValid] = useState(false);
-  const [nameError, setNameError] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [phoneError, setPhoneError] = useState("");
   const [startFlag, setStartFlag] = useState(false);
   const [isChecked, setChecked] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -48,9 +45,6 @@ export default function StartingScreenV2({ onConfirmed }) {
     setName("");
     setEmail("");
     setPhone("");
-    setNameError("");
-    setEmailError("");
-    setPhoneError("");
     setChecked(false);
     setStartFlag(false);
   };
