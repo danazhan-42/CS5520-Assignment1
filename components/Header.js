@@ -13,7 +13,6 @@ const Header = ({ children }) => {
 
 const styles = StyleSheet.create({
   container: {
-    //backgroundColor: "tomato",
     flex: 1,
     width: "100%",
     justifyContent: "flex-start",
