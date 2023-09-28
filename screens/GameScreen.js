@@ -7,8 +7,8 @@ import IncorrectGuessCard from "../components/IncorrectGuessCard";
 import CorrectGuessScreen from "../components/CorrectGuessCard";
 
 export default function GameScreen({ onLogout }) {
-  const [userGuess, setUserGuess] = useState("");
   const [randomNumber, setRandomNumber] = useState(generateRandom(10, 20));
+  const [userGuess, setUserGuess] = useState("");
   const [guessCount, setGuessCount] = useState(0);
   const [isCorrectGuess, setIsCorrectGuess] = useState(false);
 

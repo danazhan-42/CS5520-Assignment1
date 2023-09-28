@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, Image, Button } from "react-native";
+import { StyleSheet, View, Image, Button } from "react-native";
 import React from "react";
 
 import Card from "./Card";

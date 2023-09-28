@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleSheet, Platform, View } from "react-native";
+import { Text, StyleSheet, Platform } from "react-native";
 
 import { colors } from "../.expo/colors";
 
@@ -10,9 +10,8 @@ const styles = StyleSheet.create({
   text: {
     //backgroundColor: "grey",
     fontSize: 20,
-    fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
-    color: colors.textColor,
     fontWeight: "bold",
+    color: colors.textColor,
     alignSelf: "flex-start",
     paddingBottom: 10,
   },
