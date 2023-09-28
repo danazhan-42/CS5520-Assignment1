@@ -45,6 +45,9 @@ export default function StartingScreenV2({ onConfirmed }) {
     setName("");
     setEmail("");
     setPhone("");
+    setIsNameValid(false);
+    setIsEmailValid(false);
+    setIsPhoneValid(false);
     setChecked(false);
     setStartFlag(false);
   };
