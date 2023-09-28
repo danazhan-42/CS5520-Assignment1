@@ -7,8 +7,6 @@ import Screen from "../components/Screen";
 import { colors } from "../.expo/colors";
 
 function ConfirmScreen({ userInfo, modalVisibility, hideModal, onConfirm }) {
-  const [isConfirmed, setIsConfirmed] = useState(false);
-
   const handleOnConfirm = () => {
     onConfirm(true);
   };
